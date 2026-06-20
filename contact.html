@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Trinity Institute of Engineering and Technology | Get in Touch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+        }
+
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: #1a237e;
+            color: white;
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .accreditations {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .accreditations span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .accreditations span:hover {
+            color: #ff9800;
+        }
+
+        .counselling-code {
+            background: #ff6f00;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* ========== MAIN HEADER ========== */
+        .main-header {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            color: #6c14c9;
+            font-size: 2rem;
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+        .logo p {
+            color: #ff6f00;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .admission-badge {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 5px 15px rgba(255,111,0,0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ========== STICKY NAVIGATION ========== */
+        nav {
+            background: #0d1b5e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links li a:hover {
+            background: #ff6f00;
+        }
+
+        .nav-links li:last-child a {
+            background: #ff6f00;
+        }
+
+        /* ========== PAGE BANNER ========== */
+        .page-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ========== BREADCRUMB ========== */
+        .breadcrumb {
+            background: #f0f2f5;
+            padding: 0.8rem 5%;
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: #1a237e;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #ff6f00;
+        }
+
+        /* ========== CONTACT CONTENT ========== */
+        .contact-container {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Contact Info Grid */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            line-height: 1.6;
+        }
+
+        .info-card:hover p {
+            color: #ddd;
+        }
+
+        /* Main Contact Section */
+        .main-contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-form h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e7ff;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6f00;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,111,0,0.4);
+        }
+
+        /* Map Section */
+        .map-section {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .map-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            padding: 1.5rem 1.5rem 0;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 350px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Department Contacts */
+        .dept-contact {
+            margin-bottom: 3rem;
+        }
+
+        .dept-contact h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .dept-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .dept-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .dept-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dept-card h3 {
+            color: #1a237e;
+            margin-bottom: 0.8rem;
+        }
+
+        .dept-card p {
+            color: #666;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 2rem;
+        }
+
+        .faq-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: #1a237e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.3s;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 150px;
+            margin-top: 1rem;
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Social Connect */
+        .social-connect {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .social-connect h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons-large {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-icon span:first-child {
+            font-size: 2rem;
+        }
+
+        /* ========== QUICK LINKS ========== */
+        .quick-links {
+            padding: 3rem 5%;
+            background: #1a237e;
+            color: white;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .links-grid a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem;
+            display: block;
+            transition: 0.3s;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .links-grid a:hover {
+            background: #ff6f00;
+            transform: translateX(5px);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0d1b5e;
+            color: #aaa;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-contact {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="top-bar">
+    <div class="accreditations">
+        <span>🏆 NIRF Ranked</span>
+        <span>⭐ IQAC Certified</span>
+        <span>📊 NAAC A+ Grade</span>
+        <span>🏅 AICTE-CII Award</span>
+    </div>
+    <div class="counselling-code">
+        📞 COUNSELLING CODE - 1414
+    </div>
+</div>
+
+<!-- ========== MAIN HEADER ========== -->
+<div class="main-header">
+    <div class="logo">
+        <h1>TRINITY</h1>
+        <p>Institute of Engineering and Technology</p>
+    </div>
+    <div class="admission-badge">
+        🎓 ADMISSIONS OPEN 2026-27
+    </div>
+</div>
+
+<!-- ========== STICKY NAVIGATION ========== -->
+<nav>
+    <div class="nav-container">
+       <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">📖 About</a></li>
+            <li><a href="academics.html">📚 Academics</a></li>
+            <li><a href="campus.html">🏫 Campus Life</a></li>
+            <li><a href="coe.html">📝 COE</a></li>
+            <li><a href="research.html">🔬 Research</a></li>
+            <li><a href="placements.html">💼 Placements</a></li>
+            <li><a href="admissions.html">🎯 Admissions</a></li>
+            <li><a href="alumni.html">👥 Alumni</a></li>
+            <li><a href="blog.html">✍️ Blog</a></li>
+            <li><a href="contact.html" class="active">📞 Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========== PAGE BANNER ========== -->
+<section class="page-banner">
+    <h1>📞 Contact Us</h1>
+    <p>Get in Touch | We're Here to Help | Reach Out Anytime</p>
+</section>
+
+<!-- ========== BREADCRUMB ========== -->
+<div class="breadcrumb">
+    <a href="#">Home</a> > <span style="color:#ff6f00;">Contact Us</span>
+</div>
+
+<!-- ========== CONTACT CONTENT ========== -->
+<div class="contact-container">
+
+    <!-- Contact Info Cards -->
+    <div class="contact-info-grid">
+        <div class="info-card">
+            <div class="info-icon">📍</div>
+            <h3>Our Address</h3>
+            <p>Trinity Institute of Engineering and Technology<br>Anna nagar<br>Chennai - 600040, Tamil Nadu</p>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">📞</div>
+            <h3>Phone Numbers</h3>
+            <p>Admissions: +91 93639 92334<br>General: +91 98765 43211<br>Placements: +91 98765 43212</p>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">✉️</div>
+            <h3>Email Addresses</h3>
+            <p>Admissions: admissions@prince.edu<br>Principal: principal@prince.edu<br>Placements: placement@prince.edu</p>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">⏰</div>
+            <h3>Working Hours</h3>
+            <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
+        </div>
+    </div>
+
+    <!-- Main Contact Section - Form & Map -->
+    <div class="main-contact">
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>📝 Send us a Message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="fullname" placeholder="Your Full Name *" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email Address *" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Your Mobile Number">
+                </div>
+                <div class="form-group">
+                    <select id="subject">
+                        <option value="">Select Subject *</option>
+                        <option>Admission Enquiry</option>
+                        <option>Course Information</option>
+                        <option>Placement Related</option>
+                        <option>General Query</option>
+                        <option>Complaint / Suggestion</option>
+                        <option>Alumni Connect</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" id="message" placeholder="Your Message *" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">📧 Send Message</button>
+                <div id="formMessage" style="margin-top: 1rem;"></div>
+            </form>
+        </div>
+
+        <!-- Google Map -->
+        <div class="map-section">
+            <h2>📍 Find Us Here</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.987654321!2d80.2105!3d13.0825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266f8c9e8a8a1%3A0x8d2c8b2e5f8d8a2!2sAnna%20Nagar%2C%20Chennai!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Department Wise Contacts -->
+    <div class="dept-contact">
+        <h2>🏛️ Department Wise Contacts</h2>
+        <div class="dept-grid">
+            <div class="dept-card">
+                <div class="dept-icon">🎓</div>
+                <h3>Admissions Office</h3>
+                <p>📞 +91 98765 43210</p>
+                <p>✉️ admissions@prince.edu</p>
+                <p>👤 Dr. R. Jayapradha - Admission Coordinator</p>
+            </div>
+            <div class="dept-card">
+                <div class="dept-icon">💼</div>
+                <h3>Placement Cell</h3>
+                <p>📞 +91 98765 43212</p>
+                <p>✉️ placement@prince.edu</p>
+                <p>👤 Prof. S. Yuvasri - Placement Officer</p>
+            </div>
+            <div class="dept-card">
+                <div class="dept-icon">📝</div>
+                <h3>Examination Cell (COE)</h3>
+                <p>📞 +91 98765 43213</p>
+                <p>✉️ coe@prince.edu</p>
+                <p>👤 Dr. K. Nadhiya- Controller of Exams</p>
+            </div>
+            <div class="dept-card">
+                <div class="dept-icon">🏫</div>
+                <h3>Student Affairs</h3>
+                <p>📞 +91 98765 43214</p>
+                <p>✉️ studentaffairs@prince.edu</p>
+                <p>👤 Dr. L. Menaga - Dean Student Welfare</p>
+            </div>
+            <div class="dept-card">
+                <div class="dept-icon">🔬</div>
+                <h3>Research & Development</h3>
+                <p>📞 +91 98765 43215</p>
+                <p>✉️ research@prince.edu</p>
+                <p>👤 Dr. P. Jeyasri- Director Research</p>
+            </div>
+            <div class="dept-card">
+                <div class="dept-icon">👥</div>
+                <h3>Alumni Association</h3>
+                <p>📞 +91 98765 43216</p>
+                <p>✉️ alumni@prince.edu</p>
+                <p>👤 Mr. M. Karthik - Alumni Coordinator</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    How can I apply for admission? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    You can apply online through our admissions portal. Visit the Admissions page, fill the application form, upload required documents, and pay the application fee online.
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    What is the counselling code? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Our counselling code is 1414. You need to enter this code during TNEA counselling for engineering admissions.
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    Is there hostel facility available? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we have separate boys and girls hostels with modern amenities, 24/7 security, Wi-Fi, and mess facilities.
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    What is the placement record? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We have an excellent placement record with 95% placement rate. Top recruiters include Google, Microsoft, Amazon, TCS, Infosys, and many more.
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    Are scholarships available? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we offer merit scholarships, sports quota scholarships, government scholarships for SC/ST/OBC, and defence quota scholarships.
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    How can I contact the placement cell? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    You can contact placement cell at +91 98765 43212 or email placement@prince.edu. Office hours: Monday-Friday 9 AM to 5 PM.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Connect -->
+    <div class="social-connect">
+        <h2>📱 Connect With Us</h2>
+        <p>Follow us on social media for latest updates, events, and news</p>
+        <div class="social-icons-large">
+            <div class="social-icon" onclick="alert('Follow us on Facebook')">
+                <span>📘</span>
+                <span>Facebook</span>
+            </div>
+            <div class="social-icon" onclick="alert('Follow us on Instagram')">
+                <span>📸</span>
+                <span>Instagram</span>
+            </div>
+            <div class="social-icon" onclick="alert('Follow us on Twitter')">
+                <span>🐦</span>
+                <span>Twitter</span>
+            </div>
+            <div class="social-icon" onclick="alert('Connect on LinkedIn')">
+                <span>💼</span>
+                <span>LinkedIn</span>
+            </div>
+            <div class="social-icon" onclick="alert('Subscribe on YouTube')">
+                <span>▶️</span>
+                <span>YouTube</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="quick-links">
+    <div class="links-grid">
+        <a href="#" onclick="alert('Admissions Enquiry')">🎓 Admissions Enquiry</a>
+        <a href="#" onclick="alert('Placement Enquiry')">💼 Placement Enquiry</a>
+        <a href="#" onclick="alert('Download Brochure')">📄 Download Brochure</a>
+        <a href="#" onclick="alert('Schedule Campus Visit')">🏫 Schedule Campus Visit</a>
+        <a href="#" onclick="alert('Request Call Back')">📞 Request Call Back</a>
+        <a href="#" onclick="alert('Feedback Form')">📝 Feedback Form</a>
+    </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="footer-content">
+        <p>© 2025 Trinity Institute of Engineering and Technology | Chennai, Tamil Nadu</p>
+        <p style="margin: 0.5rem 0; font-size: 0.85rem;">📍 Anna Nagar West Extension, Chennai - 600040 | 📞 +91 98765 43210 | ✉️ info@prince.edu</p>
+        <div class="social-icons">
+            <span>📘</span>
+            <span>🐦</span>
+            <span>📸</span>
+            <span>💼</span>
+            <span>▶️</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">Counselling Code: 1414 | Admissions Open 2026-27 | NAAC A+ Accredited</p>
+    </div>
+</footer>
+
+<script>
+    // Contact Form Submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('fullname').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        if(name && email && subject && message && email.includes('@')) {
+            const messageDiv = document.getElementById('formMessage');
+            messageDiv.innerHTML = '<div class="success-message">✅ Message sent successfully! Our team will contact you within 24 hours.</div>';
+            
+            // Reset form
+            this.reset();
+            
+            // Clear message after 5 seconds
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
+        } else {
+            alert('❌ Please fill all required fields correctly!');
+        }
+    });
+
+    // Toggle FAQ
+    function toggleFAQ(element) {
+        element.classList.toggle('active');
+    }
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Sticky Navigation Enhancement
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if(window.scrollY > 100) {
+            nav.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+        } else {
+            nav.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+        }
+    });
+</script>
+</body>
+</html>

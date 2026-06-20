@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placements & Training | Trinity Institute of Engineering and Technology | Career Opportunities | Top Recruiters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+        }
+
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: #1a237e;
+            color: white;
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .accreditations {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .accreditations span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .accreditations span:hover {
+            color: #ff9800;
+        }
+
+        .counselling-code {
+            background: #ff6f00;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* ========== MAIN HEADER ========== */
+        .main-header {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            color: #be8f22;
+            font-size: 2rem;
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+        .logo p {
+            color: #ff6f00;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .admission-badge {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 5px 15px rgba(255,111,0,0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ========== STICKY NAVIGATION ========== */
+        nav {
+            background: #0d1b5e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links li a:hover {
+            background: #ff6f00;
+        }
+
+        .nav-links li:nth-child(7) a {
+            background: #ff6f00;
+        }
+
+        /* ========== PAGE BANNER ========== */
+        .page-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ========== BREADCRUMB ========== */
+        .breadcrumb {
+            background: #f0f2f5;
+            padding: 0.8rem 5%;
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: #1a237e;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #ff6f00;
+        }
+
+        /* ========== PLACEMENTS CONTENT ========== */
+        .placements-content {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Placement Stats */
+        .placement-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6f00;
+        }
+
+        .stat-card:hover .stat-number {
+            color: #ffcc00;
+        }
+
+        .stat-label {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Placement Highlights */
+        .highlights-section {
+            background: linear-gradient(135deg, #f0f2f5, #e8ecf1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .highlights-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-badge {
+            display: inline-block;
+            background: #ff6f00;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            margin: 0.5rem;
+            font-weight: bold;
+        }
+
+        /* Top Recruiters */
+        .recruiters-section {
+            margin-bottom: 3rem;
+        }
+
+        .recruiters-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .recruiters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .recruiter-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .recruiter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .recruiter-logo {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .recruiter-card h3 {
+            color: #1a237e;
+            font-size: 1rem;
+        }
+
+        /* Placement Statistics Table */
+        .stats-table-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .stats-table-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .placement-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .placement-table th, .placement-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .placement-table th {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+            cursor: pointer;
+        }
+
+        .placement-table th:hover {
+            background: #ff6f00;
+        }
+
+        .placement-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .placement-table tr:hover {
+            background-color: #e0e7ff;
+        }
+
+        /* Training Programs */
+        .training-section {
+            margin-bottom: 3rem;
+        }
+
+        .training-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .training-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .training-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .training-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .training-card h3 {
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+
+        .training-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .training-duration {
+            margin-top: 1rem;
+            color: #ff6f00;
+            font-weight: bold;
+        }
+
+        /* Placement Process */
+        .process-section {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .process-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            min-width: 150px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #ff6f00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .step h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Upcoming Drives */
+        .drives-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .drives-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .drive-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .drive-info h4 {
+            color: #1a237e;
+            margin-bottom: 0.3rem;
+        }
+
+        .drive-info p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .drive-date {
+            background: #ff6f00;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            margin-bottom: 2rem;
+        }
+
+        .testimonials-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-img {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-name {
+            font-weight: bold;
+            color: #1a237e;
+        }
+
+        .testimonial-company {
+            color: #ff6f00;
+            font-size: 0.85rem;
+        }
+
+        /* ========== QUICK LINKS ========== */
+        .quick-links {
+            padding: 3rem 5%;
+            background: #1a237e;
+            color: white;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .links-grid a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem;
+            display: block;
+            transition: 0.3s;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .links-grid a:hover {
+            background: #ff6f00;
+            transform: translateX(5px);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0d1b5e;
+            color: #aaa;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-icons {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icons span {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-icons span:hover {
+            color: #ff6f00;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            .process-steps {
+                flex-direction: column;
+            }
+            .drive-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="top-bar">
+    <div class="accreditations">
+        <span>🏆 NIRF Ranked</span>
+        <span>⭐ IQAC Certified</span>
+        <span>📊 NAAC A+ Grade</span>
+        <span>🏅 AICTE-CII Award</span>
+    </div>
+    <div class="counselling-code">
+        📞 COUNSELLING CODE - 1414
+    </div>
+</div>
+
+<!-- ========== MAIN HEADER ========== -->
+<div class="main-header">
+    <div class="logo">
+        <h1>TRINITY</h1>
+        <p>Institute of Engineering and Technology</p>
+    </div>
+    <div class="admission-badge">
+        🎓 ADMISSIONS OPEN 2026-27
+    </div>
+</div>
+
+<!-- ========== STICKY NAVIGATION ========== -->
+<nav>
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">📖 About</a></li>
+            <li><a href="academics.html">📚 Academics</a></li>
+            <li><a href="campus.html">🏫 Campus Life</a></li>
+            <li><a href="coe.html">📝 COE</a></li>
+            <li><a href="research.html">🔬 Research</a></li>
+            <li><a href="placements.html">💼 Placements</a></li>
+            <li><a href="admissions.html">🎯 Admissions</a></li>
+            <li><a href="alumni.html">👥 Alumni</a></li>
+            <li><a href="blog.html">✍️ Blog</a></li>
+            <li><a href="contact.html" class="active">📞 Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========== PAGE BANNER ========== -->
+<section class="page-banner">
+    <h1>💼 Placements & Training</h1>
+    <p>Building Careers | Bridging Talent | Creating Future Leaders</p>
+</section>
+
+<!-- ========== BREADCRUMB ========== -->
+<div class="breadcrumb">
+    <a href="#">Home</a> > <span style="color:#ff6f00;">Placements & Training</span>
+</div>
+
+<!-- ========== PLACEMENTS CONTENT ========== -->
+<div class="placements-content">
+
+    <!-- Placement Stats -->
+    <div class="placement-stats">
+        <div class="stat-card"><div class="stat-number">95%</div><div class="stat-label">Placement Rate</div></div>
+        <div class="stat-card"><div class="stat-number">45+</div><div class="stat-label">LPA Highest Package</div></div>
+        <div class="stat-card"><div class="stat-number">8.5</div><div class="stat-label">LPA Average Package</div></div>
+        <div class="stat-card"><div class="stat-number">250+</div><div class="stat-label">Recruiting Companies</div></div>
+        <div class="stat-card"><div class="stat-number">5000+</div><div class="stat-label">Students Placed (2025)</div></div>
+        <div class="stat-card"><div class="stat-number">1200+</div><div class="stat-label">Offers Made</div></div>
+    </div>
+
+    <!-- Placement Highlights -->
+    <div class="highlights-section">
+        <h2>🏆 Placement Highlights 2025-26</h2>
+        <div>
+            <span class="highlight-badge">🎯 95% Placement Record</span>
+            <span class="highlight-badge">💰 Highest Package: ₹45 LPA (Microsoft)</span>
+            <span class="highlight-badge">🏢 250+ Dream Companies</span>
+            <span class="highlight-badge">🎓 1200+ Multiple Offers</span>
+            <span class="highlight-badge">🌍 50+ International Offers</span>
+        </div>
+    </div>
+
+    <!-- Top Recruiters -->
+    <div class="recruiters-section">
+        <h2>🏢 Top Recruiters</h2>
+        <div class="recruiters-grid">
+            <div class="recruiter-card"><div class="recruiter-logo">🟦</div><h3>Google</h3></div>
+            <div class="recruiter-card"><div class="recruiter-logo">🟩</div><h3>Microsoft</h3></div>
+            <div class="recruiter-card"><div class="recruiter-logo">🟧</div><h3>Amazon</h3></div>
+            <div class="recruiter-card"><div class="recruiter-logo">🔴</div><h3>TCS</h3></div>
+            <div class="recruiter-card"><div class="recruiter-logo">🟦</div><h3>Infosys</h3></div>
+            <div class="recruiter-card"><div class="recruiter-logo">🟩</div><h3>Wipro</h3></div>
+            <div class="recruiter-card"><div class="recruiter-logo">🟡</div><h3>Accenture</h3></div>
+            <div class="recruiter-card"><div class="recruiter-logo">🔵</div><h3>IBM</h3></div>
+            <div class="recruiter-card"><div class="recruiter-logo">🟠</div><h3>Deloitte</h3></div>
+            <div class="recruiter-card"><div class="recruiter-logo">🟣</div><h3>Cognizant</h3></div>
+            <div class="recruiter-card"><div class="recruiter-logo">🔴</div><h3>Capgemini</h3></div>
+            <div class="recruiter-card"><div class="recruiter-logo">🟢</div><h3>HCL</h3></div>
+        </div>
+    </div>
+
+    <!-- Branch-wise Placement Statistics -->
+    <div class="stats-table-section">
+        <h2>📊 Branch-wise Placement Statistics 2025-26</h2>
+        <div class="table-container">
+            <table class="placement-table" id="placementTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Department</th>
+                        <th onclick="sortTable(1)">Total Students</th>
+                        <th onclick="sortTable(2)">Placed Students</th>
+                        <th onclick="sortTable(3)">Placement %</th>
+                        <th onclick="sortTable(4)">Highest Package (LPA)</th>
+                        <th onclick="sortTable(5)">Average Package (LPA)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>CSE</td><td>180</td><td>175</td><td>97.2%</td><td>45</td><td>12.5</td></tr>
+                    <tr><td>ECE</td><td>150</td><td>142</td><td>94.7%</td><td>35</td><td>10.2</td></tr>
+                    <tr><td>MECH</td><td>120</td><td>112</td><td>93.3%</td><td>28</td><td>8.5</td></tr>
+                    <tr><td>CIVIL</td><td>90</td><td>82</td><td>91.1%</td><td>22</td><td>7.2</td></tr>
+                    <tr><td>EEE</td><td>90</td><td>83</td><td>92.2%</td><td>25</td><td>8.0</td></tr>
+                    <tr><td>MBA</td><td>60</td><td>58</td><td>96.7%</td><td>30</td><td>9.5</td></tr>
+                    <tr><td>MCA</td><td>60</td><td>57</td><td>95.0%</td><td>32</td><td>10.0</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Training Programs -->
+    <div class="training-section">
+        <h2>📚 Training & Development Programs</h2>
+        <div class="training-grid">
+            <div class="training-card">
+                <div class="training-icon">💻</div>
+                <h3>Aptitude Training</h3>
+                <p>Quantitative aptitude, logical reasoning, verbal ability, and mock tests</p>
+                <div class="training-duration">Duration: 100 Hours | Starting: June 2026</div>
+            </div>
+            <div class="training-card">
+                <div class="training-icon">🔧</div>
+                <h3>Technical Skill Development</h3>
+                <p>Programming languages, DSA, Web development, Cloud computing, AI/ML workshops</p>
+                <div class="training-duration">Duration: 150 Hours | Industry Experts</div>
+            </div>
+            <div class="training-card">
+                <div class="training-icon">🎤</div>
+                <h3>Soft Skills & Communication</h3>
+                <p>Group discussions, personal interviews, presentation skills, corporate etiquette</p>
+                <div class="training-duration">Duration: 80 Hours | Certified Trainers</div>
+            </div>
+            <div class="training-card">
+                <div class="training-icon">📄</div>
+                <h3>Resume & Interview Preparation</h3>
+                <p>Resume building, mock interviews, portfolio development, LinkedIn optimization</p>
+                <div class="training-duration">One-on-One Mentoring</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Placement Process -->
+    <div class="process-section">
+        <h2>📋 Placement Process</h2>
+        <div class="process-steps">
+            <div class="step"><div class="step-number">1</div><h4>Pre-Placement Talk</h4><p>Company presentation & interaction</p></div>
+            <div class="step"><div class="step-number">2</div><h4>Registration</h4><p>Student registration & eligibility check</p></div>
+            <div class="step"><div class="step-number">3</div><h4>Aptitude Test</h4><p>Online/written technical & aptitude test</p></div>
+            <div class="step"><div class="step-number">4</div><h4>Technical Interview</h4><p>Domain-specific technical assessment</p></div>
+            <div class="step"><div class="step-number">5</div><h4>HR Interview</h4><p>Final round & offer letter</p></div>
+        </div>
+    </div>
+
+    <!-- Upcoming Placement Drives -->
+    <div class="drives-section">
+        <h2>📅 Upcoming Placement Drives</h2>
+        <div class="drive-card">
+            <div class="drive-info"><h4>TCS NQT 2026</h4><p>Role: System Engineer | Eligibility: CSE, ECE, IT, MCA</p></div>
+            <div class="drive-date">March 15, 2026</div>
+        </div>
+        <div class="drive-card">
+            <div class="drive-info"><h4>Infosys Campus Connect</h4><p>Role: Specialist Programmer | Eligibility: CSE, ECE, IT</p></div>
+            <div class="drive-date">March 20, 2026</div>
+        </div>
+        <div class="drive-card">
+            <div class="drive-info"><h4>Amazon Hiring Challenge</h4><p>Role: SDE Intern + FTE | Eligibility: CSE, IT, ECE</p></div>
+            <div class="drive-date">March 25, 2026</div>
+        </div>
+        <div class="drive-card">
+            <div class="drive-info"><h4>Accenture Recruitment</h4><p>Role: Associate Software Engineer | All Branches</p></div>
+            <div class="drive-date">April 5, 2026</div>
+        </div>
+        <div class="drive-card">
+            <div class="drive-info"><h4>Wipro Elite 2026</h4><p>Role: Project Engineer | Eligibility: 70% throughout</p></div>
+            <div class="drive-date">April 10, 2026</div>
+        </div>
+    </div>
+
+    <!-- Student Testimonials -->
+    <div class="testimonials-section">
+        <h2>⭐ Student Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-img">👨‍🎓</div>
+                <div class="testimonial-text">"The placement training at PRINCE was exceptional. The mock interviews and aptitude sessions prepared me well. I got placed at Microsoft with 45 LPA!"</div>
+                <div class="testimonial-name">Rahul S</div>
+                <div class="testimonial-company">Microsoft, CSE 2025</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-img">👩‍🎓</div>
+                <div class="testimonial-text">"Thanks to the amazing placement cell for bringing top companies to campus. The soft skills training was a game-changer for me."</div>
+                <div class="testimonial-name">Priyanka M</div>
+                <div class="testimonial-company">Amazon, ECE 2025</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-img">👨‍🎓</div>
+                <div class="testimonial-text">"The 100% placement assistance and industry connections helped me secure my dream job at Google. Grateful to PRINCE!"</div>
+                <div class="testimonial-name">Karthik R</div>
+                <div class="testimonial-company">Google, CSE 2025</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="quick-links">
+    <div class="links-grid">
+        <a href="#" onclick="alert('Placement Registration Form')">📝 Placement Registration</a>
+        <a href="#" onclick="alert('Training Calendar')">📅 Training Calendar</a>
+        <a href="#" onclick="alert('Recruiter Login')">🏢 Recruiter Login</a>
+        <a href="#" onclick="alert('Placement Brochure')">📄 Placement Brochure</a>
+        <a href="#" onclick="alert('Past Recruiters List')">📋 Past Recruiters</a>
+        <a href="#" onclick="alert('Mock Test Series')">📝 Mock Test Series</a>
+        <a href="#" onclick="alert('Alumni Network')">👥 Alumni Network</a>
+        <a href="#" onclick="alert('Contact Placement Cell')">📞 Contact Placement Cell</a>
+    </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="footer-content">
+        <p>© 2025 Trinity Institute of Engineering and Technology  | Chennai, Tamil Nadu</p>
+        <p style="margin: 0.5rem 0; font-size: 0.85rem;">📍 Anna Nagar West Extension, Chennai - 600040 | 📞 +91 98765 43210 | ✉️ placement@prince.edu</p>
+        <div class="social-icons">
+            <span>📘</span>
+            <span>🐦</span>
+            <span>📸</span>
+            <span>💼</span>
+            <span>▶️</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">Counselling Code: 1414 | Admissions Open 2026-27 | NAAC A+ Accredited</p>
+    </div>
+</footer>
+
+<script>
+    // Table Sorting
+    let sortDirection = [true, true, true, true, true, true];
+    
+    function sortTable(colIndex) {
+        const table = document.getElementById('placementTable');
+        const tbody = table.querySelector('tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        
+        sortDirection[colIndex] = !sortDirection[colIndex];
+        const ascending = sortDirection[colIndex];
+        
+        rows.sort((a, b) => {
+            let aVal = a.cells[colIndex].innerText;
+            let bVal = b.cells[colIndex].innerText;
+            
+            if (colIndex === 1 || colIndex === 2) {
+                aVal = parseInt(aVal);
+                bVal = parseInt(bVal);
+            } else if (colIndex === 3) {
+                aVal = parseFloat(aVal);
+                bVal = parseFloat(bVal);
+            } else if (colIndex === 4 || colIndex === 5) {
+                aVal = parseFloat(aVal);
+                bVal = parseFloat(bVal);
+            }
+            
+            if (ascending) {
+                return aVal > bVal ? 1 : -1;
+            } else {
+                return aVal < bVal ? 1 : -1;
+            }
+        });
+        
+        rows.forEach(row => tbody.appendChild(row));
+        
+        // Update sort indicator
+        const headers = table.querySelectorAll('th');
+        headers.forEach((header, idx) => {
+            if (idx === colIndex) {
+                header.innerHTML = header.innerText.replace('↑', '').replace('↓', '') + (ascending ? ' ↑' : ' ↓');
+            } else {
+                header.innerHTML = header.innerText.replace('↑', '').replace('↓', '');
+            }
+        });
+    }
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Sticky Navigation Enhancement
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+        } else {
+            nav.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+        }
+    });
+
+    // Animation on scroll
+    const statCards = document.querySelectorAll('.stat-card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    statCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease';
+        observer.observe(card);
+    });
+</script>
+</body>
+</html>

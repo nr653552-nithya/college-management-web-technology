@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Trinity Institute of Engineering and Technology| Admissions Open 2026-27 | Top Engineering College in Chennai</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+        }
+
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: #1a237e;
+            color: white;
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .accreditations {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .accreditations span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .accreditations span:hover {
+            color: #ff9800;
+        }
+
+        .counselling-code {
+            background: #ff6f00;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* ========== MAIN HEADER ========== */
+        .main-header {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            color: #ef6cc8;
+            font-size: 2rem;
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+        .logo p {
+            color: #ff6f00;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .admission-badge {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 5px 15px rgba(255,111,0,0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ========== STICKY NAVIGATION ========== */
+        nav {
+            background: #5e0d38;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links li a:hover {
+            background: #ff6f00;
+        }
+
+        .nav-links li:first-child a {
+            background: #ff6f00;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            min-height: 85vh;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+                        url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            color: white;
+        }
+
+        .winner-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-content h2 {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            color: #ffcc00;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero-content h1 span {
+            color: #ffcc00;
+        }
+
+        .college-name {
+            font-size: 1.3rem;
+            color: #ffcc00;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            margin: 1.5rem 0;
+            line-height: 1.7;
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero-btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero-btn-outline:hover {
+            background: white;
+            color: #1a237e;
+        }
+
+        /* ========== STATS SECTION ========== */
+        .stats-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9ff, #ffffff);
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a237e;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* ========== ABOUT PREVIEW ========== */
+        .about-preview {
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, #f0f2f5, #e8ecf1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #1a237e;
+            margin-bottom: 2.5rem;
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6f00, #ff9800);
+            margin: 0.8rem auto;
+            border-radius: 3px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-card h3 {
+            color: #1a237e;
+            margin-bottom: 0.8rem;
+        }
+
+        .about-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ========== QUICK LINKS ========== */
+        .quick-links {
+            padding: 3rem 5%;
+            background: #1a237e;
+            color: white;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .links-grid a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem;
+            display: block;
+            transition: 0.3s;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .links-grid a:hover {
+            background: #ff6f00;
+            transform: translateX(5px);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0d1b5e;
+            color: #aaa;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-icons {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icons span {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-icons span:hover {
+            color: #ff6f00;
+            transform: translateY(-3px);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .college-name {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .nav-links li a {
+                padding: 0.8rem 1rem;
+                font-size: 0.75rem;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .stats-grid {
+                gap: 1rem;
+            }
+            .stat-card {
+                padding: 1rem;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .accreditations {
+                gap: 0.8rem;
+                justify-content: center;
+            }
+            .nav-links {
+                gap: 0.2rem;
+            }
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+            .hero-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="top-bar">
+    <div class="accreditations">
+        <span>🏆 NIRF Ranked</span>
+        <span>⭐ IQAC Certified</span>
+        <span>📊 NAAC A+ Grade</span>
+        <span>🏅 AICTE-CII Award</span>
+    </div>
+    <div class="counselling-code">
+        📞 COUNSELLING CODE - 1414
+    </div>
+</div>
+
+<!-- ========== MAIN HEADER ========== -->
+<div class="main-header">
+    <div class="logo">
+        <h1>TRINITY</h1>
+        <p> Institute of Engineering and Technology</p>
+    </div>
+    <div class="admission-badge">
+        🎓 ADMISSIONS OPEN 2026-27
+    </div>
+</div>
+
+<!-- ========== STICKY NAVIGATION BAR ========== -->
+<nav>
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">📖 About</a></li>
+            <li><a href="academics.html">📚 Academics</a></li>
+            <li><a href="campus.html">🏫 Campus Life</a></li>
+            <li><a href="coe.html">📝 COE</a></li>
+            <li><a href="research.html">🔬 Research</a></li>
+            <li><a href="placements.html">💼 Placements</a></li>
+            <li><a href="admissions.html">🎯 Admissions</a></li>
+            <li><a href="alumni.html">👥 Alumni</a></li>
+            <li><a href="blog.html">✍️ Blog</a></li>
+            <li><a href="contact.html" class="active">📞 Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========== HERO SECTION ========== -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="winner-badge">
+            🏆 EDUFUSION LEADERSHIP - TIMES FRESH FACE WINNER
+        </div>
+        <h2>JOY TIMES SEASON 15</h2>
+        <h1>FRESH FACE <span>SEASON 15</span> WINNER</h1>
+        <div class="college-name">
+            🎓 Empowering Young Talent: Trinity | Institute of Engineering and Technology, Chennai
+        </div>
+        <p class="hero-description">
+            Celebrating the innovative spirit and dynamic leadership of our students as they showcase their talents on a prestigious platform. 
+            <strong>Fresh Face Season 15</strong> winner brings immense pride to our institution. Our student's journey from campus to national 
+            recognition reflects the quality of education and holistic development at PRINCE.
+        </p>
+       <div class="hero-buttons">
+    <!-- Apply Now button - click panna apply.html ku ponum -->
+    <button class="hero-btn" onclick="window.location.href='admissions.html'">
+        🎯 Apply Now 2026-27 →
+    </button>
+    <button class="hero-btn hero-btn-outline" onclick="window.location.href='#about'">
+        📖 Explore More
+    </button>
+</div>
+</section>
+
+<!-- ========== STATS SECTION ========== -->
+<section class="stats-section" id="stats">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number" id="studentsCount">5000+</div>
+            <div class="stat-label">Total Students</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="facultyCount">300+</div>
+            <div class="stat-label">Expert Faculty</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="placementCount">95%</div>
+            <div class="stat-label">Placement Rate</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="recruitersCount">200+</div>
+            <div class="stat-label">Top Recruiters</div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== ABOUT PREVIEW SECTION ========== -->
+<section class="about-preview" id="about">
+    <h2 class="section-title">Why Choose PRINCE?</h2>
+    <div class="about-grid">
+        <div class="about-card">
+            <div class="about-icon">🏛️</div>
+            <h3>30+ Years of Legacy</h3>
+            <p>Established in 1995, shaping young minds with quality education and values for over three decades.</p>
+        </div>
+        <div class="about-card">
+            <div class="about-icon">💼</div>
+            <h3>Top Placements</h3>
+            <p>200+ companies visit annually. Highest package: ₹45 LPA. Average: ₹8.5 LPA.</p>
+        </div>
+        <div class="about-card">
+            <div class="about-icon">🔬</div>
+            <h3>Research Excellence</h3>
+            <p>6 research centers with funded projects worth ₹10Cr+ from government and industries.</p>
+        </div>
+        <div class="about-card">
+            <div class="about-icon">🌍</div>
+            <h3>Global Exposure</h3>
+            <p>International collaborations with 15+ universities across USA, UK, Germany, and Singapore.</p>
+        </div>
+        <div class="about-card">
+            <div class="about-icon">🏆</div>
+            <h3>Award Winning Campus</h3>
+            <p>Best Engineering College Award 2024 by Times Education Icon.</p>
+        </div>
+        <div class="about-card">
+            <div class="about-icon">💡</div>
+            <h3>Innovation Hub</h3>
+            <p>State-of-the-art incubation center supporting 50+ startups.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="quick-links">
+    <div class="links-grid">
+        <a href="#" onclick="alert('Apply Online Form will open soon')">📄 Apply Online</a>
+        <a href="#" onclick="alert('Brochure Download Started')">📋 Download Brochure 2026</a>
+        <a href="#" onclick="alert('Fee Structure Details')">💰 Fee Structure</a>
+        <a href="#" onclick="alert('Academic Calendar')">📅 Academic Calendar</a>
+        <a href="#" onclick="alert('Achievements')">🏆 Student Achievements</a>
+        <a href="#" onclick="alert('Notifications')">📢 Latest Notifications</a>
+        <a href="#" onclick="alert('Campus Virtual Tour')">🎥 Virtual Campus Tour</a>
+        <a href="#" onclick="alert('Scholarship Details')">🎓 Scholarships</a>
+    </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="footer-content">
+        <p>© 2025 Trinity Institute of Engineering and Technology | Chennai, Tamil Nadu</p>
+        <p style="margin: 0.5rem 0; font-size: 0.85rem;">📍 Anna Nagar West Extension, Chennai - 600040 | 📞 +91 98765 43210 | ✉️ admissions@prince.edu</p>
+        <div class="social-icons">
+            <span>📘</span>
+            <span>🐦</span>
+            <span>📸</span>
+            <span>💼</span>
+            <span>▶️</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">Counselling Code: 1414 | Admissions Open 2026-27 | NAAC A+ Accredited</p>
+    </div>
+</footer>
+
+<script>
+    // Animated Counter Function
+    function animateCounter(elementId, targetValue, suffix = '') {
+        let current = 0;
+        const increment = targetValue / 50;
+        const element = document.getElementById(elementId);
+        
+        const interval = setInterval(() => {
+            current += increment;
+            if (current >= targetValue) {
+                element.innerText = targetValue + suffix;
+                clearInterval(interval);
+            } else {
+                element.innerText = Math.floor(current) + suffix;
+            }
+        }, 30);
+    }
+
+    // Intersection Observer for Stats Animation
+    const statsSection = document.getElementById('stats');
+    let animated = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !animated) {
+            animated = true;
+            animateCounter('studentsCount', 5000, '+');
+            animateCounter('facultyCount', 300, '+');
+            animateCounter('placementCount', 95, '%');
+            animateCounter('recruitersCount', 200, '+');
+        }
+    }, { threshold: 0.5 });
+
+    observer.observe(statsSection);
+
+    // Smooth Scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Sticky Navigation Enhancement
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+        } else {
+            nav.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+        }
+    });
+</script>
+</body>
+</html>

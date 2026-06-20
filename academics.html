@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics | TRINITY Engineering College | Courses, Departments & Curriculum</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+        }
+
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: #1a237e;
+            color: white;
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .accreditations {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .accreditations span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .accreditations span:hover {
+            color: #ff9800;
+        }
+
+        .counselling-code {
+            background: #ff6f00;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* ========== MAIN HEADER ========== */
+        .main-header {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            color: #1a237e;
+            font-size: 2rem;
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+        .logo p {
+            color: #ff6f00;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .admission-badge {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 5px 15px rgba(255,111,0,0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ========== STICKY NAVIGATION ========== */
+        nav {
+            background: #0d1b5e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links li a:hover {
+            background: #ff6f00;
+        }
+
+        .nav-links li:nth-child(3) a {
+            background: #ff6f00;
+        }
+
+        /* ========== PAGE BANNER ========== */
+        .page-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ========== BREADCRUMB ========== */
+        .breadcrumb {
+            background: #f0f2f5;
+            padding: 0.8rem 5%;
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: #1a237e;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #ff6f00;
+        }
+
+        /* ========== ACADEMICS CONTENT ========== */
+        .academics-content {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Department Section */
+        .dept-section {
+            margin-bottom: 4rem;
+        }
+
+        .dept-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #ff6f00;
+        }
+
+        .dept-header h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+        }
+
+        .dept-badge {
+            background: #1a237e;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .course-header {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .course-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-duration {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .course-body {
+            padding: 1.5rem;
+        }
+
+        .course-specs {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .spec {
+            text-align: center;
+        }
+
+        .spec-value {
+            font-weight: bold;
+            color: #ff6f00;
+            font-size: 1.1rem;
+        }
+
+        .spec-label {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .course-desc {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .course-btn {
+            background: transparent;
+            border: 2px solid #ff6f00;
+            color: #ff6f00;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        .course-btn:hover {
+            background: #ff6f00;
+            color: white;
+        }
+
+        /* Fee Table Section */
+        .fee-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .fee-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .fee-table th, .fee-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .fee-table th {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .fee-table th:hover {
+            background: #ff6f00;
+        }
+
+        .fee-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .fee-table tr:hover {
+            background-color: #e8ecf1;
+        }
+
+        .sort-icon {
+            margin-left: 5px;
+            font-size: 0.8rem;
+        }
+
+        /* Academic Calendar */
+        .calendar-section {
+            margin-bottom: 4rem;
+        }
+
+        .calendar-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .calendar-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .calendar-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .calendar-month {
+            color: #ff6f00;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ff6f00;
+        }
+
+        .calendar-event {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            padding: 0.5rem;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .calendar-event:hover {
+            background: #f0f2f5;
+        }
+
+        .event-date {
+            background: #1a237e;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .event-name {
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        /* Laboratories */
+        .labs-section {
+            margin-bottom: 4rem;
+        }
+
+        .labs-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .labs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .lab-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .lab-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+        }
+
+        .lab-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .lab-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .lab-card p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* Examination Scheme */
+        .exam-section {
+            background: linear-gradient(135deg, #f0f2f5, #e8ecf1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .exam-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .exam-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .exam-percent {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6f00;
+        }
+
+        /* ========== QUICK LINKS ========== */
+        .quick-links {
+            padding: 3rem 5%;
+            background: #1a237e;
+            color: white;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .links-grid a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem;
+            display: block;
+            transition: 0.3s;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .links-grid a:hover {
+            background: #ff6f00;
+            transform: translateX(5px);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0d1b5e;
+            color: #aaa;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-icons {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icons span {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-icons span:hover {
+            color: #ff6f00;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            .dept-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            .course-specs {
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="top-bar">
+    <div class="accreditations">
+        <span>🏆 NIRF Ranked</span>
+        <span>⭐ IQAC Certified</span>
+        <span>📊 NAAC A+ Grade</span>
+        <span>🏅 AICTE-CII Award</span>
+    </div>
+    <div class="counselling-code">
+        📞 COUNSELLING CODE - 1414
+    </div>
+</div>
+
+<!-- ========== MAIN HEADER ========== -->
+<div class="main-header">
+    <div class="logo">
+        <h1>TRINITY</h1>
+        <p>Trinity Institute of Engineering and Technology</p>
+    </div>
+    <div class="admission-badge">
+        🎓 ADMISSIONS OPEN 2026-27
+    </div>
+</div>
+
+<!-- ========== STICKY NAVIGATION ========== -->
+<nav>
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">📖 About</a></li>
+            <li><a href="academics.html">📚 Academics</a></li>
+            <li><a href="campus.html">🏫 Campus Life</a></li>
+            <li><a href="coe.html">📝 COE</a></li>
+            <li><a href="research.html">🔬 Research</a></li>
+            <li><a href="placements.html">💼 Placements</a></li>
+            <li><a href="admissions.html">🎯 Admissions</a></li>
+            <li><a href="alumni.html">👥 Alumni</a></li>
+            <li><a href="blog.html">✍️ Blog</a></li>
+            <li><a href="contact.html" class="active">📞 Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========== PAGE BANNER ========== -->
+<section class="page-banner">
+    <h1>Academics at TRINITY</h1>
+    <p>Excellence in Education | Industry-Aligned Curriculum | World-Class Infrastructure</p>
+</section>
+
+<!-- ========== BREADCRUMB ========== -->
+<div class="breadcrumb">
+    <a href="#">Home</a> > <span style="color:#ff6f00;">Academics</span>
+</div>
+
+<!-- ========== ACADEMICS CONTENT ========== -->
+<div class="academics-content">
+
+    <!-- Engineering Department -->
+    <div class="dept-section">
+        <div class="dept-header">
+            <h2>🔧 Engineering Programs</h2>
+            <div class="dept-badge">4 Years | Full Time</div>
+        </div>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>B.E. Computer Science Engineering</h3>
+                    <div class="course-duration">Duration: 4 Years (8 Semesters)</div>
+                </div>
+                <div class="course-body">
+                    <div class="course-specs">
+                        <div class="spec"><div class="spec-value">₹1,50,000</div><div class="spec-label">Annual Fee</div></div>
+                        <div class="spec"><div class="spec-value">120</div><div class="spec-label">Seats</div></div>
+                        <div class="spec"><div class="spec-value">AICTE</div><div class="spec-label">Approved</div></div>
+                    </div>
+                    <div class="course-desc">Specializations in AI & ML, Full Stack Development, Cybersecurity, Cloud Computing.</div>
+                    <button class="course-btn" onclick="alert('CSE Course Details - Curriculum, Syllabus, Lab Facilities')">View Details →</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>B.E. Electronics & Communication</h3>
+                    <div class="course-duration">Duration: 4 Years (8 Semesters)</div>
+                </div>
+                <div class="course-body">
+                    <div class="course-specs">
+                        <div class="spec"><div class="spec-value">₹1,40,000</div><div class="spec-label">Annual Fee</div></div>
+                        <div class="spec"><div class="spec-value">90</div><div class="spec-label">Seats</div></div>
+                        <div class="spec"><div class="spec-value">NBA</div><div class="spec-label">Accredited</div></div>
+                    </div>
+                    <div class="course-desc">Specializations in VLSI Design, Embedded Systems, IoT, Robotics.</div>
+                    <button class="course-btn" onclick="alert('ECE Course Details - Curriculum, Syllabus, Lab Facilities')">View Details →</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>B.E. Mechanical Engineering</h3>
+                    <div class="course-duration">Duration: 4 Years (8 Semesters)</div>
+                </div>
+                <div class="course-body">
+                    <div class="course-specs">
+                        <div class="spec"><div class="spec-value">₹1,35,000</div><div class="spec-label">Annual Fee</div></div>
+                        <div class="spec"><div class="spec-value">90</div><div class="spec-label">Seats</div></div>
+                        <div class="spec"><div class="spec-value">NBA</div><div class="spec-label">Accredited</div></div>
+                    </div>
+                    <div class="course-desc">Specializations in Robotics, Automobile, Manufacturing, Thermal Engineering.</div>
+                    <button class="course-btn" onclick="alert('Mechanical Course Details - Curriculum, Syllabus, Lab Facilities')">View Details →</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>B.E. Civil Engineering</h3>
+                    <div class="course-duration">Duration: 4 Years (8 Semesters)</div>
+                </div>
+                <div class="course-body">
+                    <div class="course-specs">
+                        <div class="spec"><div class="spec-value">₹1,30,000</div><div class="spec-label">Annual Fee</div></div>
+                        <div class="spec"><div class="spec-value">60</div><div class="spec-label">Seats</div></div>
+                        <div class="spec"><div class="spec-value">AICTE</div><div class="spec-label">Approved</div></div>
+                    </div>
+                    <div class="course-desc">Specializations in Structural Engineering, Construction Management, Environmental Engg.</div>
+                    <button class="course-btn" onclick="alert('Civil Course Details - Curriculum, Syllabus, Lab Facilities')">View Details →</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>B.E. Electrical & Electronics</h3>
+                    <div class="course-duration">Duration: 4 Years (8 Semesters)</div>
+                </div>
+                <div class="course-body">
+                    <div class="course-specs">
+                        <div class="spec"><div class="spec-value">₹1,35,000</div><div class="spec-label">Annual Fee</div></div>
+                        <div class="spec"><div class="spec-value">60</div><div class="spec-label">Seats</div></div>
+                        <div class="spec"><div class="spec-value">AICTE</div><div class="spec-label">Approved</div></div>
+                    </div>
+                    <div class="course-desc">Specializations in Power Systems, Renewable Energy, Industrial Automation.</div>
+                    <button class="course-btn" onclick="alert('EEE Course Details - Curriculum, Syllabus, Lab Facilities')">View Details →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Arts & Science Department -->
+    <div class="dept-section">
+        <div class="dept-header">
+            <h2>🎨 Arts & Science Programs</h2>
+            <div class="dept-badge">3 Years | Full Time</div>
+        </div>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>B.Sc. Computer Science</h3>
+                    <div class="course-duration">Duration: 3 Years (6 Semesters)</div>
+                </div>
+                <div class="course-body">
+                    <div class="course-specs">
+                        <div class="spec"><div class="spec-value">₹60,000</div><div class="spec-label">Annual Fee</div></div>
+                        <div class="spec"><div class="spec-value">80</div><div class="spec-label">Seats</div></div>
+                    </div>
+                    <div class="course-desc">Programming, Database Management, Web Technologies, Networking.</div>
+                    <button class="course-btn" onclick="alert('B.Sc CS Course Details')">View Details →</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>B.Com (Honours)</h3>
+                    <div class="course-duration">Duration: 3 Years (6 Semesters)</div>
+                </div>
+                <div class="course-body">
+                    <div class="course-specs">
+                        <div class="spec"><div class="spec-value">₹55,000</div><div class="spec-label">Annual Fee</div></div>
+                        <div class="spec"><div class="spec-value">120</div><div class="spec-label">Seats</div></div>
+                    </div>
+                    <div class="course-desc">Accounting, Finance, Taxation, Corporate Law, Business Analytics.</div>
+                    <button class="course-btn" onclick="alert('B.Com Course Details')">View Details →</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>BA English Literature</h3>
+                    <div class="course-duration">Duration: 3 Years (6 Semesters)</div>
+                </div>
+                <div class="course-body">
+                    <div class="course-specs">
+                        <div class="spec"><div class="spec-value">₹45,000</div><div class="spec-label">Annual Fee</div></div>
+                        <div class="spec"><div class="spec-value">60</div><div class="spec-label">Seats</div></div>
+                    </div>
+                    <div class="course-desc">British Literature, American Literature, Indian Writing, Journalism.</div>
+                    <button class="course-btn" onclick="alert('BA English Course Details')">View Details →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Graduate Programs -->
+    <div class="dept-section">
+        <div class="dept-header">
+            <h2>🎓 Post Graduate Programs</h2>
+            <div class="dept-badge">2 Years | Full Time</div>
+        </div>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>M.E. Computer Science</h3>
+                    <div class="course-duration">Duration: 2 Years (4 Semesters)</div>
+                </div>
+                <div class="course-body">
+                    <div class="course-specs">
+                        <div class="spec"><div class="spec-value">₹1,00,000</div><div class="spec-label">Annual Fee</div></div>
+                        <div class="spec"><div class="spec-value">30</div><div class="spec-label">Seats</div></div>
+                    </div>
+                    <div class="course-desc">Advanced AI, Machine Learning, Data Science, Research Methodology.</div>
+                    <button class="course-btn" onclick="alert('ME CSE Course Details')">View Details →</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>MBA - Master of Business Admin</h3>
+                    <div class="course-duration">Duration: 2 Years (4 Semesters)</div>
+                </div>
+                <div class="course-body">
+                    <div class="course-specs">
+                        <div class="spec"><div class="spec-value">₹1,20,000</div><div class="spec-label">Annual Fee</div></div>
+                        <div class="spec"><div class="spec-value">60</div><div class="spec-label">Seats</div></div>
+                    </div>
+                    <div class="course-desc">Marketing, Finance, HR, Operations, Business Analytics specializations.</div>
+                    <button class="course-btn" onclick="alert('MBA Course Details')">View Details →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fee Structure Table -->
+    <div class="fee-section">
+        <h2>📊 Comprehensive Fee Structure 2026-27</h2>
+        <div class="table-container">
+            <table class="fee-table" id="feeTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Course <span class="sort-icon">↕️</span></th>
+                        <th onclick="sortTable(1)">Duration <span class="sort-icon">↕️</span></th>
+                        <th onclick="sortTable(2)">Annual Fee (₹) <span class="sort-icon">↕️</span></th>
+                        <th onclick="sortTable(3)">Seats <span class="sort-icon">↕️</span></th>
+                        <th onclick="sortTable(4)">Eligibility <span class="sort-icon">↕️</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>B.E. CSE</td><td>4 Years</td><td>1,50,000</td><td>120</td><td>HSC with 60% + CET</td></tr>
+                    <tr><td>B.E. ECE</td><td>4 Years</td><td>1,40,000</td><td>90</td><td>HSC with 60% + CET</td></tr>
+                    <tr><td>B.E. Mechanical</td><td>4 Years</td><td>1,35,000</td><td>90</td><td>HSC with 55% + CET</td></tr>
+                    <tr><td>B.E. Civil</td><td>4 Years</td><td>1,30,000</td><td>60</td><td>HSC with 55% + CET</td></tr>
+                    <tr><td>B.E. EEE</td><td>4 Years</td><td>1,35,000</td><td>60</td><td>HSC with 55% + CET</td></tr>
+                    <tr><td>B.Sc CS</td><td>3 Years</td><td>60,000</td><td>80</td><td>HSC with 50%</td></tr>
+                    <tr><td>B.Com</td><td>3 Years</td><td>55,000</td><td>120</td><td>HSC with 50%</td></tr>
+                    <tr><td>BA English</td><td>3 Years</td><td>45,000</td><td>60</td><td>HSC with 50%</td></tr>
+                    <tr><td>ME CSE</td><td>2 Years</td><td>1,00,000</td><td>30</td><td>BE/B.Tech with 60%</td></tr>
+                    <tr><td>MBA</td><td>2 Years</td><td>1,20,000</td><td>60</td><td>Any Degree with 50% + TANCET</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Academic Calendar -->
+    <div class="calendar-section">
+        <h2>📅 Academic Calendar 2026-27</h2>
+        <div class="calendar-grid">
+            <div class="calendar-card">
+                <div class="calendar-month">August - September 2026</div>
+                <div class="calendar-event"><div class="event-date">Aug 1st</div><div class="event-name">Commencement of Academic Year</div></div>
+                <div class="calendar-event"><div class="event-date">Aug 5th</div><div class="event-name">Orientation for Freshers</div></div>
+                <div class="calendar-event"><div class="event-date">Aug 10th</div><div class="event-name">Regular Classes Begin</div></div>
+            </div>
+            <div class="calendar-card">
+                <div class="calendar-month">October - November 2026</div>
+                <div class="calendar-event"><div class="event-date">Oct 15th</div><div class="event-name">Internal Assessment I</div></div>
+                <div class="calendar-event"><div class="event-date">Nov 5th</div><div class="event-name">Diwali Break</div></div>
+                <div class="calendar-event"><div class="event-date">Nov 20th</div><div class="event-name">Internal Assessment II</div></div>
+            </div>
+            <div class="calendar-card">
+                <div class="calendar-month">December 2026 - January 2027</div>
+                <div class="calendar-event"><div class="event-date">Dec 5th</div><div class="event-name">Model Examinations</div></div>
+                <div class="calendar-event"><div class="event-date">Dec 20th</div><div class="event-name">Christmas Break</div></div>
+                <div class="calendar-event"><div class="event-date">Jan 10th</div><div class="event-name">Semester Exams Begin</div></div>
+            </div>
+            <div class="calendar-card">
+                <div class="calendar-month">March - April 2027</div>
+                <div class="calendar-event"><div class="event-date">Mar 15th</div><div class="event-name">Internal Assessment III</div></div>
+                <div class="calendar-event"><div class="event-date">Apr 5th</div><div class="event-name">University Exams</div></div>
+                <div class="calendar-event"><div class="event-date">Apr 30th</div><div class="event-name">Summer Break Begins</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Laboratories -->
+    <div class="labs-section">
+        <h2>🔬 State-of-the-Art Laboratories</h2>
+        <div class="labs-grid">
+            <div class="lab-card"><div class="lab-icon">💻</div><h3>Computer Labs</h3><p>500+ Systems | High-end Configurations</p></div>
+            <div class="lab-card"><div class="lab-icon">🔌</div><h3>Electronics Lab</h3><p>Advanced Equipment | PCB Design</p></div>
+            <div class="lab-card"><div class="lab-icon">⚙️</div><h3>Mechanical Workshop</h3><p>CNC Machines | 3D Printers</p></div>
+            <div class="lab-card"><div class="lab-icon">🏗️</div><h3>Civil Engineering Lab</h3><p>Material Testing | Survey Equipment</p></div>
+            <div class="lab-card"><div class="lab-icon">🔬</div><h3>Physics & Chemistry Lab</h3><p>Modern Instruments | Research Grade</p></div>
+            <div class="lab-card"><div class="lab-icon">🤖</div><h3>Robotics & AI Lab</h3><p>Robotics Kits | AI Workstations</p></div>
+        </div>
+    </div>
+
+    <!-- Examination Scheme -->
+    <div class="exam-section">
+        <h2>📝 Examination & Evaluation Scheme</h2>
+        <div class="exam-grid">
+            <div class="exam-card"><div class="exam-percent">40%</div><p>Internal Assessment<br>(Assignments + Tests + Practicals)</p></div>
+            <div class="exam-card"><div class="exam-percent">60%</div><p>University Examination<br>(End Semester Theory Exam)</p></div>
+            <div class="exam-card"><div class="exam-percent">75%</div><p>Minimum Attendance Required<br>To appear for Exams</p></div>
+            <div class="exam-card"><div class="exam-percent">50%</div><p>Passing Percentage<br>In each subject</p></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="quick-links">
+    <div class="links-grid">
+        <a href="#" onclick="alert('Apply Online Form will open soon')">📄 Apply Online</a>
+        <a href="#" onclick="alert('Brochure Download Started')">📋 Download Brochure 2026</a>
+        <a href="#" onclick="alert('Fee Structure Details')">💰 Fee Structure</a>
+        <a href="#" onclick="alert('Academic Calendar')">📅 Academic Calendar</a>
+        <a href="#" onclick="alert('Syllabus Download')">📚 Download Syllabus</a>
+        <a href="#" onclick="alert('Exam Timetable')">📋 Exam Timetable</a>
+        <a href="#" onclick="alert('Library Catalog')">📖 Library Catalog</a>
+        <a href="#" onclick="alert('Scholarship Details')">🎓 Scholarships</a>
+    </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="footer-content">
+        <p>© 2025 Trinity Institute of Engineering and Technology | Chennai, Tamil Nadu</p>
+        <p style="margin: 0.5rem 0; font-size: 0.85rem;">📍 Anna Nagar West Extension, Chennai - 600040 | 📞 +91 98765 43210 | ✉️ academics@prince.edu</p>
+        <div class="social-icons">
+            <span>📘</span>
+            <span>🐦</span>
+            <span>📸</span>
+            <span>💼</span>
+            <span>▶️</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">Counselling Code: 1414 | Admissions Open 2026-27 | NAAC A+ Accredited</p>
+    </div>
+</footer>
+
+<script>
+    // Table Sorting Function
+    let sortDirections = [true, true, true, true, true];
+    
+    function sortTable(colIndex) {
+        const table = document.getElementById('feeTable');
+        const tbody = table.querySelector('tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        
+        sortDirections[colIndex] = !sortDirections[colIndex];
+        const ascending = sortDirections[colIndex];
+        
+        rows.sort((a, b) => {
+            let aVal = a.cells[colIndex].innerText;
+            let bVal = b.cells[colIndex].innerText;
+            
+            if (colIndex === 2) {
+                aVal = parseInt(aVal.replace(/,/g, ''));
+                bVal = parseInt(bVal.replace(/,/g, ''));
+            } else if (colIndex === 3) {
+                aVal = parseInt(aVal);
+                bVal = parseInt(bVal);
+            }
+            
+            if (ascending) {
+                return aVal > bVal ? 1 : -1;
+            } else {
+                return aVal < bVal ? 1 : -1;
+            }
+        });
+        
+        rows.forEach(row => tbody.appendChild(row));
+        
+        // Update sort icons
+        const headers = table.querySelectorAll('th');
+        headers.forEach((header, idx) => {
+            const icon = header.querySelector('.sort-icon');
+            if (idx === colIndex) {
+                icon.innerHTML = ascending ? '⬆️' : '⬇️';
+            } else {
+                icon.innerHTML = '↕️';
+            }
+        });
+    }
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Sticky Navigation Enhancement
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+        } else {
+            nav.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+        }
+    });
+</script>
+</body>
+</html>

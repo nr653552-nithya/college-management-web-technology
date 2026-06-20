@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni | Trinity Institute of Engineering and Technology | Our Pride, Our Legacy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+        }
+
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: #1a237e;
+            color: white;
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .accreditations {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .accreditations span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .accreditations span:hover {
+            color: #ff9800;
+        }
+
+        .counselling-code {
+            background: #ff6f00;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* ========== MAIN HEADER ========== */
+        .main-header {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            color: #b64141;
+            font-size: 2rem;
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+        .logo p {
+            color: #ff6f00;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .admission-badge {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 5px 15px rgba(255,111,0,0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ========== STICKY NAVIGATION ========== */
+        nav {
+            background: #0d1b5e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links li a:hover {
+            background: #ff6f00;
+        }
+
+        .nav-links li:nth-child(9) a {
+            background: #ff6f00;
+        }
+
+        /* ========== PAGE BANNER ========== */
+        .page-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ========== BREADCRUMB ========== */
+        .breadcrumb {
+            background: #f0f2f5;
+            padding: 0.8rem 5%;
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: #1a237e;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #ff6f00;
+        }
+
+        /* ========== ALUMNI CONTENT ========== */
+        .alumni-content {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Stats Section */
+        .alumni-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6f00;
+        }
+
+        .stat-card:hover .stat-number {
+            color: #ffcc00;
+        }
+
+        .stat-label {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Message from Alumni President */
+        .president-message {
+            background: linear-gradient(135deg, #f0f2f5, #e8ecf1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .president-photo {
+            text-align: center;
+        }
+
+        .president-avatar {
+            font-size: 5rem;
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .president-message-text h3 {
+            color: #1a237e;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .president-message-text .designation {
+            color: #ff6f00;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .president-message-text p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Distinguished Alumni Grid */
+        .distinguished-section {
+            margin-bottom: 3rem;
+        }
+
+        .distinguished-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .alumni-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .alumni-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .alumni-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .alumni-img {
+            font-size: 5rem;
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .alumni-card h3 {
+            margin: 1rem 0 0.3rem;
+            color: #1a237e;
+        }
+
+        .alumni-card .company {
+            color: #ff6f00;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .alumni-card .batch {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .alumni-card .achievement {
+            padding: 0 1rem 1rem;
+            color: #555;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Alumni Chapters */
+        .chapters-section {
+            margin-bottom: 3rem;
+        }
+
+        .chapters-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .chapter-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+        }
+
+        .chapter-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-card h3 {
+            margin-bottom: 0.3rem;
+        }
+
+        /* Events Section */
+        .events-section {
+            margin-bottom: 3rem;
+        }
+
+        .events-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .event-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .event-date {
+            background: #ff6f00;
+            color: white;
+            padding: 0.8rem;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 70px;
+        }
+
+        .event-date .day {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .event-date .month {
+            font-size: 0.8rem;
+        }
+
+        .event-details h4 {
+            color: #1a237e;
+            margin-bottom: 0.3rem;
+        }
+
+        .event-details p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Alumni Registration Form */
+        .register-section {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .register-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .register-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .register-form input, 
+        .register-form select, 
+        .register-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95rem;
+        }
+
+        .register-form button {
+            background: #ff6f00;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .register-form button:hover {
+            background: #ff9800;
+            transform: translateY(-2px);
+        }
+
+        /* ========== QUICK LINKS ========== */
+        .quick-links {
+            padding: 3rem 5%;
+            background: #1a237e;
+            color: white;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .links-grid a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem;
+            display: block;
+            transition: 0.3s;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .links-grid a:hover {
+            background: #ff6f00;
+            transform: translateX(5px);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0d1b5e;
+            color: #aaa;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-icons {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icons span {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-icons span:hover {
+            color: #ff6f00;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            .president-message {
+                text-align: center;
+                justify-content: center;
+            }
+            .event-card {
+                flex-direction: column;
+            }
+            .event-date {
+                display: inline-block;
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="top-bar">
+    <div class="accreditations">
+        <span>🏆 NIRF Ranked</span>
+        <span>⭐ IQAC Certified</span>
+        <span>📊 NAAC A+ Grade</span>
+        <span>🏅 AICTE-CII Award</span>
+    </div>
+    <div class="counselling-code">
+        📞 COUNSELLING CODE - 1414
+    </div>
+</div>
+
+<!-- ========== MAIN HEADER ========== -->
+<div class="main-header">
+    <div class="logo">
+        <h1>TRINITY</h1>
+        <p>Institute of Engineering and Technology</p>
+    </div>
+    <div class="admission-badge">
+        🎓 ADMISSIONS OPEN 2026-27
+    </div>
+</div>
+
+<!-- ========== STICKY NAVIGATION ========== -->
+<nav>
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">📖 About</a></li>
+            <li><a href="academics.html">📚 Academics</a></li>
+            <li><a href="campus.html">🏫 Campus Life</a></li>
+            <li><a href="coe.html">📝 COE</a></li>
+            <li><a href="research.html">🔬 Research</a></li>
+            <li><a href="placements.html">💼 Placements</a></li>
+            <li><a href="admissions.html">🎯 Admissions</a></li>
+            <li><a href="alumni.html">👥 Alumni</a></li>
+            <li><a href="blog.html">✍️ Blog</a></li>
+            <li><a href="contact.html" class="active">📞 Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========== PAGE BANNER ========== -->
+<section class="page-banner">
+    <h1>👥 Our Alumni - Our Pride</h1>
+    <p>15,000+ Strong Global Network | Making Impact Worldwide | Connecting Beyond Graduation</p>
+</section>
+
+<!-- ========== BREADCRUMB ========== -->
+<div class="breadcrumb">
+    <a href="#">Home</a> > <span style="color:#ff6f00;">Alumni</span>
+</div>
+
+<!-- ========== ALUMNI CONTENT ========== -->
+<div class="alumni-content">
+
+    <!-- Stats Section -->
+    <div class="alumni-stats">
+        <div class="stat-card">
+            <div class="stat-number" id="alumniCount">15,000+</div>
+            <div class="stat-label">Alumni Worldwide</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="countriesCount">25+</div>
+            <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="entrepreneursCount">500+</div>
+            <div class="stat-label">Entrepreneurs</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="phdCount">100+</div>
+            <div class="stat-label">PhD Holders</div>
+        </div>
+    </div>
+
+    <!-- Message from Alumni President -->
+    <div class="president-message">
+        <div class="president-photo">
+            <div class="president-avatar">👨‍🎓</div>
+        </div>
+        <div class="president-message-text">
+            <h3>Dr. S. Rajesh Kumar</h3>
+            <div class="designation">President - TRINITY Alumni Association | VP, Google USA</div>
+            <p>"Dear Fellow Alumni,<br><br>
+            Our journey at TRINITY has shaped us into who we are today. The values, education, and friendships we built here continue to guide us. As we spread across the globe, let us stay connected, support each other, and give back to our beloved institution. Together, we can make a difference!<br><br>
+            Let's keep the TRINITY spirit alive! 🇮🇳"</p>
+        </div>
+    </div>
+
+    <!-- Distinguished Alumni -->
+    <div class="distinguished-section">
+        <h2>🌟 Distinguished Alumni</h2>
+        <div class="alumni-grid">
+            <div class="alumni-card">
+                <div class="alumni-img">👨‍💼</div>
+                <h3>Dr. S. Rajesh Kumar</h3>
+                <div class="company">Vice President - Google USA</div>
+                <div class="batch">CSE Batch 2005</div>
+                <div class="achievement">"AI Research Pioneer | 25+ Patents | Top 100 Global AI Leaders"</div>
+            </div>
+            <div class="alumni-card">
+                <div class="alumni-img">👩‍💼</div>
+                <h3>Ms. Priyanka Srinivasan</h3>
+                <div class="company">Founder - EdTech Startup</div>
+                <div class="batch">ECE Batch 2010</div>
+                <div class="achievement">"Forbes 30 Under 30 | Raised $50M Funding | Empowering Rural Education"</div>
+            </div>
+            <div class="alumni-card">
+                <div class="alumni-img">👨‍🔬</div>
+                <h3>Dr. K. Balaji</h3>
+                <div class="company">Senior Scientist - ISRO</div>
+                <div class="batch">MECH Batch 2008</div>
+                <div class="achievement">"Chandrayaan-3 Team Member | Space Research Excellence Award"</div>
+            </div>
+            <div class="alumni-card">
+                <div class="alumni-img">👩‍⚖️</div>
+                <h3>Adv. Deepa Ramesh</h3>
+                <div class="company">High Court Advocate</div>
+                <div class="batch">BA Batch 2012</div>
+                <div class="achievement">"Youngest Female Advocate to win landmark case | Social Justice Activist"</div>
+            </div>
+            <div class="alumni-card">
+                <div class="alumni-img">👨‍💻</div>
+                <h3>Arun K. Prabhu</h3>
+                <div class="company">CTO - Microsoft India</div>
+                <div class="batch">CSE Batch 2007</div>
+                <div class="achievement">"Led Azure AI Development | Microsoft Gold Star Award Winner"</div>
+            </div>
+            <div class="alumni-card">
+                <div class="alumni-img">👩‍🎨</div>
+                <h3>Divya S. Menon</h3>
+                <div class="company">Award-Winning Filmmaker</div>
+                <div class="batch">B.Sc Batch 2015</div>
+                <div class="achievement">"National Film Award Winner | Documentary on Climate Change"</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alumni Chapters -->
+    <div class="chapters-section">
+        <h2>🌍 Alumni Chapters Worldwide</h2>
+        <div class="chapters-grid">
+            <div class="chapter-card">
+                <div class="chapter-icon">🇺🇸</div>
+                <h3>USA Chapter</h3>
+                <p>2,500+ Members | Silicon Valley</p>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-icon">🇬🇧</div>
+                <h3>UK Chapter</h3>
+                <p>1,200+ Members | London</p>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-icon">🇦🇪</div>
+                <h3>UAE Chapter</h3>
+                <p>1,800+ Members | Dubai</p>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-icon">🇸🇬</div>
+                <h3>Singapore Chapter</h3>
+                <p>800+ Members | Singapore</p>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-icon">🇦🇺</div>
+                <h3>Australia Chapter</h3>
+                <p>600+ Members | Sydney</p>
+            </div>
+            <div class="chapter-card">
+                <div class="chapter-icon">🇮🇳</div>
+                <h3>India Chapter</h3>
+                <p>8,000+ Members | Multiple Cities</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Alumni Events -->
+    <div class="events-section">
+        <h2>📅 Upcoming Alumni Events</h2>
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-date">
+                    <div class="day">25</div>
+                    <div class="month">JAN</div>
+                </div>
+                <div class="event-details">
+                    <h4>Annual Alumni Meet 2026</h4>
+                    <p>📍 TRINITY Campus, Chennai | 6:00 PM onwards</p>
+                    <p>🎉 Grand reunion with cultural programs, dinner, and networking</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-date">
+                    <div class="day">10</div>
+                    <div class="month">FEB</div>
+                </div>
+                <div class="event-details">
+                    <h4>USA Alumni Chapter Meetup</h4>
+                    <p>📍 Silicon Valley, California | 3:00 PM PST</p>
+                    <p>🤝 Networking with industry leaders & tech talks</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-date">
+                    <div class="day">15</div>
+                    <div class="month">MAR</div>
+                </div>
+                <div class="event-details">
+                    <h4>Mentorship Program Launch</h4>
+                    <p>📍 Virtual Event | 7:00 PM IST</p>
+                    <p>🎓 Connect current students with alumni mentors</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alumni Registration Form -->
+    <div class="register-section">
+        <h2>📝 Join Alumni Network</h2>
+        <div class="register-form">
+            <form id="alumniForm">
+                <div class="form-grid">
+                    <input type="text" id="alumniName" placeholder="Full Name *" required>
+                    <input type="email" id="alumniEmail" placeholder="Email ID *" required>
+                    <input type="tel" id="alumniPhone" placeholder="Mobile Number *" required>
+                    <input type="text" id="passoutYear" placeholder="Passing Year *" required>
+                    <select id="alumniCourse" required>
+                        <option value="">Select Course *</option>
+                        <option>B.E. Computer Science</option>
+                        <option>B.E. Electronics & Communication</option>
+                        <option>B.E. Mechanical Engineering</option>
+                        <option>B.E. Civil Engineering</option>
+                        <option>B.Sc Computer Science</option>
+                        <option>MBA</option>
+                    </select>
+                    <input type="text" id="currentOrg" placeholder="Current Organization & Designation">
+                </div>
+                <textarea rows="2" id="alumniAddress" placeholder="Current City & Country"></textarea>
+                <button type="submit">🔗 Join Alumni Network</button>
+                <p id="alumniMsg" style="margin-top:1rem; text-align:center;"></p>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="quick-links">
+    <div class="links-grid">
+        <a href="#" onclick="alert('Alumni Directory Access')">📋 Alumni Directory</a>
+        <a href="#" onclick="alert('Upcoming Events')">🎉 Events & Meetups</a>
+        <a href="#" onclick="alert('Mentorship Program')">🤝 Mentorship Program</a>
+        <a href="#" onclick="alert('Donate to College')">💰 Donate to College</a>
+        <a href="#" onclick="alert('Alumni Newsletter')">📧 Alumni Newsletter</a>
+        <a href="#" onclick="alert('Share Your Story')">📖 Share Your Story</a>
+        <a href="#" onclick="alert('Job Postings')">💼 Job Postings</a>
+        <a href="#" onclick="alert('Contact Alumni Office')">📞 Contact Alumni Office</a>
+    </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="footer-content">
+        <p>© 2025 Trinity Institute of Engineering and Technology | Chennai, Tamil Nadu</p>
+        <p style="margin: 0.5rem 0; font-size: 0.85rem;">📍 Anna Nagar West Extension, Chennai - 600040 | 📞 +91 98765 43210 | ✉️ alumni@prince.edu</p>
+        <div class="social-icons">
+            <span>📘</span>
+            <span>🐦</span>
+            <span>📸</span>
+            <span>💼</span>
+            <span>▶️</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">Counselling Code: 1414 | Admissions Open 2026-27 | NAAC A+ Accredited</p>
+    </div>
+</footer>
+
+<script>
+    // Alumni Form Submission
+    document.getElementById('alumniForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('alumniName').value;
+        const email = document.getElementById('alumniEmail').value;
+        const course = document.getElementById('alumniCourse').value;
+        
+        if(name && email && course) {
+            const msgDiv = document.getElementById('alumniMsg');
+            msgDiv.innerHTML = '<span style="color:#90ee90;">✅ Registration successful! Welcome to PRINCE Alumni Network. Verification email sent to ' + email + '</span>';
+            msgDiv.style.color = '#90ee90';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                msgDiv.innerHTML = '';
+            }, 5000);
+        }
+    });
+
+    // Animate stats on scroll
+    const statsSection = document.querySelector('.alumni-stats');
+    let animated = false;
+    
+    const observer = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting && !animated) {
+            animated = true;
+            // Stats are already displayed as numbers
+        }
+    }, { threshold: 0.5 });
+    
+    observer.observe(statsSection);
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Sticky Navigation Enhancement
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if(window.scrollY > 100) {
+            nav.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+        } else {
+            nav.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+        }
+    });
+</script>
+</body>
+</html>

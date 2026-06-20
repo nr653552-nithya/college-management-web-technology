@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COE | Controller of Examinations | Trinity Institute of Engineering and Technology| Exam Results, Hall Tickets, Schedules</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+        }
+
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: #1a237e;
+            color: white;
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .accreditations {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .accreditations span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .accreditations span:hover {
+            color: #ff9800;
+        }
+
+        .counselling-code {
+            background: #ff6f00;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* ========== MAIN HEADER ========== */
+        .main-header {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            color: #6fe149;
+            font-size: 2rem;
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+        .logo p {
+            color: #ff6f00;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .admission-badge {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 5px 15px rgba(255,111,0,0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ========== STICKY NAVIGATION ========== */
+        nav {
+            background: #0d1b5e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links li a:hover {
+            background: #ff6f00;
+        }
+
+        .nav-links li:nth-child(5) a {
+            background: #ff6f00;
+        }
+
+        /* ========== PAGE BANNER ========== */
+        .page-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ========== BREADCRUMB ========== */
+        .breadcrumb {
+            background: #f0f2f5;
+            padding: 0.8rem 5%;
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: #1a237e;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #ff6f00;
+        }
+
+        /* ========== COE CONTENT ========== */
+        .coe-content {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* COE Message */
+        .coe-message {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .coe-photo {
+            text-align: center;
+        }
+
+        .coe-avatar {
+            font-size: 5rem;
+            background: white;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .coe-message-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .coe-message-text .designation {
+            color: #ffcc00;
+            margin-bottom: 1rem;
+        }
+
+        .coe-message-text p {
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* Quick Access Cards */
+        .quick-access {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .access-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .access-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+        }
+
+        .access-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .access-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .access-card p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Result Search Section */
+        .result-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .result-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .result-search {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .result-search input, .result-search select {
+            padding: 0.8rem 1rem;
+            border: 2px solid #e0e7ff;
+            border-radius: 10px;
+            font-size: 1rem;
+            min-width: 200px;
+        }
+
+        .result-search button {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .result-search button:hover {
+            transform: scale(1.02);
+        }
+
+        .result-display {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #f0f2f5;
+            border-radius: 15px;
+            display: none;
+        }
+
+        .result-display.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        .result-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+
+        .result-header {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .marks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .mark-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sgpa {
+            text-align: center;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #e8f5e9;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        /* Exam Schedule Table */
+        .schedule-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .schedule-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .exam-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .exam-table th, .exam-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .exam-table th {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+        }
+
+        .exam-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .exam-table tr:hover {
+            background-color: #e0e7ff;
+        }
+
+        /* Hall Ticket Download */
+        .hallticket-section {
+            background: linear-gradient(135deg, #f0f2f5, #e8ecf1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .hallticket-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .hallticket-form {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .hallticket-form input {
+            padding: 0.8rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            min-width: 250px;
+        }
+
+        .download-btn {
+            background: #1a237e;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #ff6f00;
+        }
+
+        /* Revaluation Section */
+        .reval-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .reval-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .reval-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .reval-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .reval-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .reval-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .reval-card h3 {
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+
+        .reval-card .date {
+            color: #ff6f00;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .apply-btn {
+            background: #ff6f00;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        /* Important Dates */
+        .dates-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .dates-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .dates-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .date-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .date-item:hover {
+            background: #f0f2f5;
+        }
+
+        .event-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .event-date {
+            color: #ff6f00;
+            font-weight: bold;
+        }
+
+        /* ========== QUICK LINKS ========== */
+        .quick-links {
+            padding: 3rem 5%;
+            background: #1a237e;
+            color: white;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .links-grid a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem;
+            display: block;
+            transition: 0.3s;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .links-grid a:hover {
+            background: #ff6f00;
+            transform: translateX(5px);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0d1b5e;
+            color: #aaa;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-icons {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icons span {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-icons span:hover {
+            color: #ff6f00;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            .coe-message {
+                text-align: center;
+                justify-content: center;
+            }
+            .date-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="top-bar">
+    <div class="accreditations">
+        <span>🏆 NIRF Ranked</span>
+        <span>⭐ IQAC Certified</span>
+        <span>📊 NAAC A+ Grade</span>
+        <span>🏅 AICTE-CII Award</span>
+    </div>
+    <div class="counselling-code">
+        📞 COUNSELLING CODE - 1414
+    </div>
+</div>
+
+<!-- ========== MAIN HEADER ========== -->
+<div class="main-header">
+    <div class="logo">
+        <h1>TRINITY</h1>
+        <p>Institute of Engineering and Technology</p>
+    </div>
+    <div class="admission-badge">
+        🎓 ADMISSIONS OPEN 2026-27
+    </div>
+</div>
+
+<!-- ========== STICKY NAVIGATION ========== -->
+<nav>
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">📖 About</a></li>
+            <li><a href="academics.html">📚 Academics</a></li>
+            <li><a href="campus.html">🏫 Campus Life</a></li>
+            <li><a href="coe.html">📝 COE</a></li>
+            <li><a href="research.html">🔬 Research</a></li>
+            <li><a href="placements.html">💼 Placements</a></li>
+            <li><a href="admissions.html">🎯 Admissions</a></li>
+            <li><a href="alumni.html">👥 Alumni</a></li>
+            <li><a href="blog.html">✍️ Blog</a></li>
+            <li><a href="contact.html" class="active">📞 Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========== PAGE BANNER ========== -->
+<section class="page-banner">
+    <h1>📝 Controller of Examinations (COE)</h1>
+    <p>Exam Schedules | Results | Hall Tickets | Transcripts | Revaluation</p>
+</section>
+
+<!-- ========== BREADCRUMB ========== -->
+<div class="breadcrumb">
+    <a href="#">Home</a> > <span style="color:#ff6f00;">COE</span>
+</div>
+
+<!-- ========== COE CONTENT ========== -->
+<div class="coe-content">
+
+    <!-- COE Message -->
+    <div class="coe-message">
+        <div class="coe-photo">
+            <div class="coe-avatar">👨‍🎓</div>
+        </div>
+        <div class="coe-message-text">
+            <h3>Dr. S. Balakrishnan</h3>
+            <div class="designation">Controller of Examinations</div>
+            <p>"Welcome to the Office of the Controller of Examinations. Our office is committed to conducting fair and transparent examinations, timely declaration of results, and efficient issuance of certificates. We strive to maintain the highest standards of academic integrity and student service."</p>
+        </div>
+    </div>
+
+    <!-- Quick Access Cards -->
+    <div class="quick-access">
+        <div class="access-card" onclick="document.getElementById('result-section').scrollIntoView({behavior:'smooth'})">
+            <div class="access-icon">📊</div>
+            <h3>View Results</h3>
+            <p>Check Semester Results</p>
+        </div>
+        <div class="access-card" onclick="document.getElementById('hallticket-section').scrollIntoView({behavior:'smooth'})">
+            <div class="access-icon">🎫</div>
+            <h3>Hall Ticket</h3>
+            <p>Download Exam Hall Ticket</p>
+        </div>
+        <div class="access-card" onclick="document.getElementById('schedule-section').scrollIntoView({behavior:'smooth'})">
+            <div class="access-icon">📅</div>
+            <h3>Exam Schedule</h3>
+            <p>View Time Table</p>
+        </div>
+        <div class="access-card" onclick="document.getElementById('reval-section').scrollIntoView({behavior:'smooth'})">
+            <div class="access-icon">🔄</div>
+            <h3>Revaluation</h3>
+            <p>Apply for Revaluation</p>
+        </div>
+    </div>
+
+    <!-- Result Search Section -->
+    <div id="result-section" class="result-section">
+        <h2>📊 Semester Results</h2>
+        <div class="result-search">
+            <input type="text" id="regNo" placeholder="Register Number" value="2021CS001">
+            <select id="semester">
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6" selected>Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>
+            <button onclick="showResult()">🔍 Get Results</button>
+        </div>
+        <div id="resultDisplay" class="result-display">
+            <div class="result-card">
+                <div class="result-header">
+                    <h3>Trinity Institute of Engineering and Technology</h3>
+                    <p>Semester Examination Results - Nov/Dec 2025</p>
+                </div>
+                <div id="resultDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exam Schedule Section -->
+    <div id="schedule-section" class="schedule-section">
+        <h2>📅 Exam Schedule - April/May 2026</h2>
+        <div class="table-container">
+            <table class="exam-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>01-04-2026</td><td>Tuesday</td><td>10:00 AM - 01:00 PM</td><td>CS8501</td><td>Theory of Computation</td></tr>
+                    <tr><td>04-04-2026</td><td>Friday</td><td>10:00 AM - 01:00 PM</td><td>CS8591</td><td>Computer Networks</td></tr>
+                    <tr><td>08-04-2026</td><td>Tuesday</td><td>10:00 AM - 01:00 PM</td><td>CS8601</td><td>Mobile Computing</td></tr>
+                    <tr><td>11-04-2026</td><td>Friday</td><td>10:00 AM - 01:00 PM</td><td>CS8602</td><td>Compiler Design</td></tr>
+                    <tr><td>15-04-2026</td><td>Tuesday</td><td>10:00 AM - 01:00 PM</td><td>CS8603</td><td>Distributed Systems</td></tr>
+                    <tr><td>18-04-2026</td><td>Friday</td><td>10:00 AM - 01:00 PM</td><td>MG8591</td><td>Principles of Management</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Hall Ticket Download -->
+    <div id="hallticket-section" class="hallticket-section">
+        <h2>🎫 Download Hall Ticket</h2>
+        <div class="hallticket-form">
+            <input type="text" id="hallRegNo" placeholder="Enter Register Number">
+            <select id="examType">
+                <option>April/May 2026 - UG Examinations</option>
+                <option>November/December 2025 - UG Examinations</option>
+                <option>Arrear Examinations</option>
+            </select>
+            <button class="download-btn" onclick="downloadHallTicket()">📥 Download Hall Ticket</button>
+        </div>
+    </div>
+
+    <!-- Revaluation Section -->
+    <div id="reval-section" class="reval-section">
+        <h2>🔄 Revaluation / Photocopy</h2>
+        <div class="reval-grid">
+            <div class="reval-card">
+                <div class="reval-icon">📋</div>
+                <h3>Photocopy of Answer Script</h3>
+                <div class="date">Last Date: 25-03-2026</div>
+                <p>Fee: ₹500 per paper</p>
+                <button class="apply-btn" onclick="alert('Photocopy Application Form will open')">Apply Now</button>
+            </div>
+            <div class="reval-card">
+                <div class="reval-icon">🔄</div>
+                <h3>Revaluation</h3>
+                <div class="date">Last Date: 05-04-2026</div>
+                <p>Fee: ₹1000 per paper</p>
+                <button class="apply-btn" onclick="alert('Revaluation Application Form will open')">Apply Now</button>
+            </div>
+            <div class="reval-card">
+                <div class="reval-icon">📜</div>
+                <h3>Transcript / Certificates</h3>
+                <div class="date">Processing Time: 7 Days</div>
+                <p>Fee: ₹500 per copy</p>
+                <button class="apply-btn" onclick="alert('Transcript Application Form will open')">Request Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Important Dates -->
+    <div class="dates-section">
+        <h2>📌 Important Dates</h2>
+        <div class="dates-list">
+            <div class="date-item"><span class="event-name">Last Date for Exam Fee Payment</span><span class="event-date">15-03-2026</span></div>
+            <div class="date-item"><span class="event-name">Hall Ticket Release Date</span><span class="event-date">25-03-2026</span></div>
+            <div class="date-item"><span class="event-name">Theory Examinations Start</span><span class="event-date">01-04-2026</span></div>
+            <div class="date-item"><span class="event-name">Practical Examinations Start</span><span class="event-date">25-03-2026</span></div>
+            <div class="date-item"><span class="event-name">Last Date for Revaluation Application</span><span class="event-date">05-04-2026</span></div>
+            <div class="date-item"><span class="event-name">Result Declaration</span><span class="event-date">25-05-2026</span></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="quick-links">
+    <div class="links-grid">
+        <a href="#" onclick="alert('Results Page')">📊 Check Results</a>
+        <a href="#" onclick="alert('Hall Ticket Download')">🎫 Hall Ticket</a>
+        <a href="#" onclick="alert('Exam Timetable')">📅 Exam Schedule</a>
+        <a href="#" onclick="alert('Revaluation Form')">🔄 Revaluation</a>
+        <a href="#" onclick="alert('Transcript Request')">📜 Transcripts</a>
+        <a href="#" onclick="alert('Exam Application')">📝 Exam Form</a>
+        <a href="#" onclick="alert('COE Notifications')">📢 Notifications</a>
+        <a href="#" onclick="alert('Contact COE')">📞 Contact COE</a>
+    </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="footer-content">
+        <p>© 2025 Trinity Institute of Engineering and Technology  | Chennai, Tamil Nadu</p>
+        <p style="margin: 0.5rem 0; font-size: 0.85rem;">📍 Anna Nagar West Extension, Chennai - 600040 | 📞 +91 98765 43210 | ✉️ coe@prince.edu</p>
+        <div class="social-icons">
+            <span>📘</span>
+            <span>🐦</span>
+            <span>📸</span>
+            <span>💼</span>
+            <span>▶️</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">Counselling Code: 1414 | Admissions Open 2026-27 | NAAC A+ Accredited</p>
+    </div>
+</footer>
+
+<script>
+    // Sample Result Data
+    const resultData = {
+        "2021CS001": {
+            name: "KUMARESAN S",
+            regNo: "2021CS001",
+            semester: 6,
+            subjects: [
+                { name: "Theory of Computation", code: "CS8501", marks: 85, grade: "A" },
+                { name: "Computer Networks", code: "CS8591", marks: 78, grade: "B+" },
+                { name: "Mobile Computing", code: "CS8601", marks: 82, grade: "A" },
+                { name: "Compiler Design", code: "CS8602", marks: 75, grade: "B+" },
+                { name: "Distributed Systems", code: "CS8603", marks: 80, grade: "A" },
+                { name: "Principles of Management", code: "MG8591", marks: 88, grade: "A+" }
+            ],
+            sgpa: 8.4,
+            cgpa: 8.2
+        },
+        "2021CS002": {
+            name: "PRIYADHARSHINI M",
+            regNo: "2021CS002",
+            semester: 6,
+            subjects: [
+                { name: "Theory of Computation", code: "CS8501", marks: 92, grade: "A+" },
+                { name: "Computer Networks", code: "CS8591", marks: 88, grade: "A" },
+                { name: "Mobile Computing", code: "CS8601", marks: 90, grade: "A+" },
+                { name: "Compiler Design", code: "CS8602", marks: 85, grade: "A" },
+                { name: "Distributed Systems", code: "CS8603", marks: 87, grade: "A" },
+                { name: "Principles of Management", code: "MG8591", marks: 91, grade: "A+" }
+            ],
+            sgpa: 8.9,
+            cgpa: 8.7
+        }
+    };
+
+    function showResult() {
+        const regNo = document.getElementById('regNo').value;
+        const semester = document.getElementById('semester').value;
+        const resultDisplay = document.getElementById('resultDisplay');
+        const resultDetails = document.getElementById('resultDetails');
+
+        if (resultData[regNo]) {
+            const data = resultData[regNo];
+            let marksHtml = '<div class="marks-grid">';
+            data.subjects.forEach(sub => {
+                marksHtml += `
+                    <div class="mark-item">
+                        <span><strong>${sub.code}</strong> - ${sub.name}</span>
+                        <span>${sub.marks} marks | Grade: ${sub.grade}</span>
+                    </div>
+                `;
+            });
+            marksHtml += `</div>
+                <div class="sgpa">
+                    📊 SGPA: ${data.sgpa} | 📈 CGPA: ${data.cgpa}
+                </div>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <p><strong>Result: PASS ✅</strong> | Percentage: ${((data.sgpa/10)*100)}%</p>
+                </div>
+            `;
+            
+            resultDetails.innerHTML = `
+                <h4>Student Name: ${data.name}</h4>
+                <p>Register Number: ${data.regNo} | Semester: ${semester}</p>
+                <hr style="margin: 1rem 0;">
+                ${marksHtml}
+            `;
+            resultDisplay.classList.add('active');
+        } else {
+            resultDetails.innerHTML = `<div style="text-align:center;color:red;">❌ No results found for Register Number: ${regNo}</div>`;
+            resultDisplay.classList.add('active');
+        }
+    }
+
+    function downloadHallTicket() {
+        const regNo = document.getElementById('hallRegNo').value;
+        if (regNo) {
+            alert(`✅ Hall Ticket for ${regNo} is being downloaded...\n\nPlease save the PDF file.`);
+        } else {
+            alert('❌ Please enter your Register Number');
+        }
+    }
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Sticky Navigation Enhancement
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+        } else {
+            nav.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Trinity Institute of Engineering and Technology | Innovation, Publications, Patents & Consultancy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+        }
+
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: #1a237e;
+            color: white;
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .accreditations {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .accreditations span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .accreditations span:hover {
+            color: #ff9800;
+        }
+
+        .counselling-code {
+            background: #ff6f00;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* ========== MAIN HEADER ========== */
+        .main-header {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            color: #349dab;
+            font-size: 2rem;
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+        .logo p {
+            color: #ff6f00;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .admission-badge {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 5px 15px rgba(255,111,0,0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ========== STICKY NAVIGATION ========== */
+        nav {
+            background: #0d1b5e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links li a:hover {
+            background: #ff6f00;
+        }
+
+        .nav-links li:nth-child(6) a {
+            background: #ff6f00;
+        }
+
+        /* ========== PAGE BANNER ========== */
+        .page-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ========== BREADCRUMB ========== */
+        .breadcrumb {
+            background: #f0f2f5;
+            padding: 0.8rem 5%;
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: #1a237e;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #ff6f00;
+        }
+
+        /* ========== RESEARCH CONTENT ========== */
+        .research-content {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Research Stats */
+        .research-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6f00;
+        }
+
+        .stat-card:hover .stat-number {
+            color: #ffcc00;
+        }
+
+        .stat-label {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Research Vision */
+        .research-vision {
+            background: linear-gradient(135deg, #f0f2f5, #e8ecf1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .research-vision h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .research-vision p {
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Research Centers */
+        .centers-section {
+            margin-bottom: 3rem;
+        }
+
+        .centers-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .centers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .center-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .center-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .center-header {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .center-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .center-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .center-body {
+            padding: 1.5rem;
+        }
+
+        .center-body p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .center-funding {
+            background: #e8f5e9;
+            padding: 0.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        /* Publications Section */
+        .publications-section {
+            margin-bottom: 3rem;
+        }
+
+        .publications-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .publication-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid #1a237e;
+            background: transparent;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: #1a237e;
+            color: white;
+        }
+
+        .publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .publication-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.2rem;
+            transition: 0.3s;
+            border-left: 4px solid #ff6f00;
+        }
+
+        .publication-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .pub-title {
+            font-weight: bold;
+            color: #1a237e;
+            margin-bottom: 0.3rem;
+        }
+
+        .pub-authors {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .pub-journal {
+            color: #ff6f00;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .pub-year {
+            display: inline-block;
+            background: #e0e7ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Patents Section */
+        .patents-section {
+            margin-bottom: 3rem;
+        }
+
+        .patents-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .patents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .patent-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .patent-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .patent-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .patent-card h3 {
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+
+        .patent-number {
+            color: #ff6f00;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Consultancy Section */
+        .consultancy-section {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .consultancy-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .consultancy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .consultancy-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .consultancy-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+
+        .consultancy-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .consultancy-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .consultancy-card p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Funding Section */
+        .funding-section {
+            margin-bottom: 3rem;
+        }
+
+        .funding-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .funding-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .funding-table th, .funding-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .funding-table th {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+        }
+
+        .funding-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .funding-table tr:hover {
+            background-color: #e0e7ff;
+        }
+
+        /* Collaboration Section */
+        .collaboration-section {
+            margin-bottom: 2rem;
+        }
+
+        .collaboration-section h2 {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .collab-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .collab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .collab-icon {
+            font-size: 2.5rem;
+        }
+
+        .collab-card h3 {
+            color: #1a237e;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* ========== QUICK LINKS ========== */
+        .quick-links {
+            padding: 3rem 5%;
+            background: #1a237e;
+            color: white;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .links-grid a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem;
+            display: block;
+            transition: 0.3s;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .links-grid a:hover {
+            background: #ff6f00;
+            transform: translateX(5px);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0d1b5e;
+            color: #aaa;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-icons {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icons span {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-icons span:hover {
+            color: #ff6f00;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            .funding-table {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="top-bar">
+    <div class="accreditations">
+        <span>🏆 NIRF Ranked</span>
+        <span>⭐ IQAC Certified</span>
+        <span>📊 NAAC A+ Grade</span>
+        <span>🏅 AICTE-CII Award</span>
+    </div>
+    <div class="counselling-code">
+        📞 COUNSELLING CODE - 1414
+    </div>
+</div>
+
+<!-- ========== MAIN HEADER ========== -->
+<div class="main-header">
+    <div class="logo">
+        <h1>TRINITY</h1>
+        <p>Institute of Engineering and Technology</p>
+    </div>
+    <div class="admission-badge">
+        🎓 ADMISSIONS OPEN 2026-27
+    </div>
+</div>
+
+<!-- ========== STICKY NAVIGATION ========== -->
+<nav>
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">📖 About</a></li>
+            <li><a href="academics.html">📚 Academics</a></li>
+            <li><a href="campus.html">🏫 Campus Life</a></li>
+            <li><a href="coe.html">📝 COE</a></li>
+            <li><a href="research.html">🔬 Research</a></li>
+            <li><a href="placements.html">💼 Placements</a></li>
+            <li><a href="admissions.html">🎯 Admissions</a></li>
+            <li><a href="alumni.html">👥 Alumni</a></li>
+            <li><a href="blog.html">✍️ Blog</a></li>
+            <li><a href="contact.html" class="active">📞 Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========== PAGE BANNER ========== -->
+<section class="page-banner">
+    <h1>🔬 Research & Innovation</h1>
+    <p>Advancing Knowledge | Driving Innovation | Creating Impact</p>
+</section>
+
+<!-- ========== BREADCRUMB ========== -->
+<div class="breadcrumb">
+    <a href="#">Home</a> > <span style="color:#ff6f00;">Research</span>
+</div>
+
+<!-- ========== RESEARCH CONTENT ========== -->
+<div class="research-content">
+
+    <!-- Research Stats -->
+    <div class="research-stats">
+        <div class="stat-card"><div class="stat-number">150+</div><div class="stat-label">Research Publications</div></div>
+        <div class="stat-card"><div class="stat-number">25+</div><div class="stat-label">Patents Filed</div></div>
+        <div class="stat-card"><div class="stat-number">8+</div><div class="stat-label">Patents Granted</div></div>
+        <div class="stat-card"><div class="stat-number">₹12Cr+</div><div class="stat-label">Research Funding</div></div>
+        <div class="stat-card"><div class="stat-number">15+</div><div class="stat-label">International Collaborations</div></div>
+        <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Research Centers</div></div>
+    </div>
+
+    <!-- Research Vision -->
+    <div class="research-vision">
+        <h2>🎯 Research Vision</h2>
+        <p>To foster a culture of innovation and excellence in research, addressing societal challenges through cutting-edge technology and interdisciplinary collaboration. We aim to be a leading center for research and development, producing impactful publications, patents, and technologies that benefit society and industry.</p>
+    </div>
+
+    <!-- Research Centers -->
+    <div class="centers-section">
+        <h2>🏛️ Research Centers of Excellence</h2>
+        <div class="centers-grid">
+            <div class="center-card">
+                <div class="center-header">
+                    <div class="center-icon">🤖</div>
+                    <h3>Center for Artificial Intelligence & Machine Learning</h3>
+                </div>
+                <div class="center-body">
+                    <p>Focused on deep learning, computer vision, NLP, and AI applications in healthcare and agriculture.</p>
+                    <div class="center-funding">💰 Funded by DST: ₹2.5 Cr</div>
+                </div>
+            </div>
+            <div class="center-card">
+                <div class="center-header">
+                    <div class="center-icon">🔋</div>
+                    <h3>Center for Renewable Energy & Sustainability</h3>
+                </div>
+                <div class="center-body">
+                    <p>Research in solar energy, wind power, energy storage, and sustainable technologies.</p>
+                    <div class="center-funding">💰 Funded by MNRE: ₹3 Cr</div>
+                </div>
+            </div>
+            <div class="center-card">
+                <div class="center-header">
+                    <div class="center-icon">📡</div>
+                    <h3>Center for IoT & Embedded Systems</h3>
+                </div>
+                <div class="center-body">
+                    <p>Developing IoT solutions for smart cities, industrial automation, and healthcare monitoring.</p>
+                    <div class="center-funding">💰 Funded by MeitY: ₹1.8 Cr</div>
+                </div>
+            </div>
+            <div class="center-card">
+                <div class="center-header">
+                    <div class="center-icon">🧬</div>
+                    <h3>Center for Biomedical Engineering</h3>
+                </div>
+                <div class="center-body">
+                    <p>Medical device innovation, biomedical signal processing, and healthcare analytics.</p>
+                    <div class="center-funding">💰 Funded by BIRAC: ₹2 Cr</div>
+                </div>
+            </div>
+            <div class="center-card">
+                <div class="center-header">
+                    <div class="center-icon">🔐</div>
+                    <h3>Center for Cybersecurity & Blockchain</h3>
+                </div>
+                <div class="center-body">
+                    <p>Research in network security, cryptography, blockchain applications, and digital forensics.</p>
+                    <div class="center-funding">💰 Funded by ISEA: ₹1.5 Cr</div>
+                </div>
+            </div>
+            <div class="center-card">
+                <div class="center-header">
+                    <div class="center-icon">🏗️</div>
+                    <h3>Center for Smart Infrastructure</h3>
+                </div>
+                <div class="center-body">
+                    <p>Smart materials, structural health monitoring, and sustainable construction techniques.</p>
+                    <div class="center-funding">💰 Funded by SERB: ₹1.2 Cr</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Publications Section -->
+    <div class="publications-section">
+        <h2>📚 Research Publications</h2>
+        <div class="publication-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="journal">Journal Papers</button>
+            <button class="filter-btn" data-filter="conference">Conference Papers</button>
+            <button class="filter-btn" data-filter="book">Book Chapters</button>
+        </div>
+        <div class="publications-list" id="publicationsList">
+            <!-- Journal Papers -->
+            <div class="publication-item" data-type="journal">
+                <div class="pub-title">Deep Learning Based Intelligent Traffic Management System for Smart Cities</div>
+                <div class="pub-authors">Dr. K. Senthil Kumar, Dr. R. Priya, S. Kumar</div>
+                <div class="pub-journal">IEEE Transactions on Intelligent Transportation Systems (Impact Factor: 8.5)</div>
+                <span class="pub-year">2025</span>
+            </div>
+            <div class="publication-item" data-type="journal">
+                <div class="pub-title">A Novel Approach for Early Detection of Plant Diseases Using CNN</div>
+                <div class="pub-authors">Dr. M. Meenakshi, Dr. S. Venkatesh</div>
+                <div class="pub-journal">Computers and Electronics in Agriculture (Impact Factor: 6.2)</div>
+                <span class="pub-year">2024</span>
+            </div>
+            <div class="publication-item" data-type="conference">
+                <div class="pub-title">Blockchain-Based Secure Voting System: A Scalable Architecture</div>
+                <div class="pub-authors">Dr. P. Rajesh, R. Karthik, S. Divya</div>
+                <div class="pub-journal">IEEE International Conference on Blockchain (ICBC 2025)</div>
+                <span class="pub-year">2025</span>
+            </div>
+            <div class="publication-item" data-type="journal">
+                <div class="pub-title">Optimization of Solar Panel Efficiency Using IoT-Based Tracking System</div>
+                <div class="pub-authors">Dr. S. Balaji, Dr. L. Priya</div>
+                <div class="pub-journal">Renewable and Sustainable Energy Reviews (Impact Factor: 15.9)</div>
+                <span class="pub-year">2024</span>
+            </div>
+            <div class="publication-item" data-type="conference">
+                <div class="pub-title">Real-Time Driver Drowsiness Detection Using Facial Landmarks</div>
+                <div class="pub-authors">Dr. R. Karthik, M. Saravanan</div>
+                <div class="pub-journal">International Conference on Computer Vision and Image Processing (CVIP 2025)</div>
+                <span class="pub-year">2025</span>
+            </div>
+            <div class="publication-item" data-type="book">
+                <div class="pub-title">Fundamentals of Machine Learning: Theory and Applications</div>
+                <div class="pub-authors">Dr. K. Senthil Kumar, Dr. M. Meenakshi</div>
+                <div class="pub-journal">Springer Publications - Book Chapter</div>
+                <span class="pub-year">2024</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patents Section -->
+    <div class="patents-section">
+        <h2>📜 Patents Granted & Filed</h2>
+        <div class="patents-grid">
+            <div class="patent-card">
+                <div class="patent-icon">📄</div>
+                <h3>IoT Based Smart Helmet for Miners Safety</h3>
+                <div class="patent-number">Patent No: 202541023456</div>
+                <p>Granted: March 2025</p>
+            </div>
+            <div class="patent-card">
+                <div class="patent-icon">📄</div>
+                <h3>AI-Powered Early Warning System for Natural Disasters</h3>
+                <div class="patent-number">Patent No: 202541023457</div>
+                <p>Filed: December 2024</p>
+            </div>
+            <div class="patent-card">
+                <div class="patent-icon">📄</div>
+                <h3>Waste to Energy Conversion System</h3>
+                <div class="patent-number">Patent No: 202541023458</div>
+                <p>Granted: January 2025</p>
+            </div>
+            <div class="patent-card">
+                <div class="patent-icon">📄</div>
+                <h3>Low-Cost Water Purification System for Rural Areas</h3>
+                <div class="patent-number">Patent No: 202541023459</div>
+                <p>Filed: October 2024</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consultancy Section -->
+    <div class="consultancy-section">
+        <h2>💼 Industry Consultancy</h2>
+        <div class="consultancy-grid">
+            <div class="consultancy-card">
+                <div class="consultancy-icon">🏭</div>
+                <h3>TCS</h3>
+                <p>AI/ML Solutions for Customer Analytics</p>
+                <p>Project Value: ₹45 Lakhs</p>
+            </div>
+            <div class="consultancy-card">
+                <div class="consultancy-icon">🏭</div>
+                <h3>Infosys</h3>
+                <p>Blockchain-based Supply Chain System</p>
+                <p>Project Value: ₹60 Lakhs</p>
+            </div>
+            <div class="consultancy-card">
+                <div class="consultancy-icon">🏭</div>
+                <h3>Mahindra & Mahindra</h3>
+                <p>EV Battery Management System</p>
+                <p>Project Value: ₹75 Lakhs</p>
+            </div>
+            <div class="consultancy-card">
+                <div class="consultancy-icon">🏭</div>
+                <h3>Siemens</h3>
+                <p>Industrial IoT Solutions</p>
+                <p>Project Value: ₹50 Lakhs</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sponsored Research Projects -->
+    <div class="funding-section">
+        <h2>💰 Sponsored Research Projects</h2>
+        <div class="table-container">
+            <table class="funding-table">
+                <thead>
+                    <tr>
+                        <th>Project Title</th>
+                        <th>Funding Agency</th>
+                        <th>Amount (₹)</th>
+                        <th>Duration</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>AI-based Crop Disease Detection</td><td>DST</td><td>35 Lakhs</td><td>2024-2027</td><td>Ongoing</td></tr>
+                    <tr><td>Smart Grid Optimization</td><td>MNRE</td><td>48 Lakhs</td><td>2023-2026</td><td>Ongoing</td></tr>
+                    <tr><td>Wastewater Treatment Technology</td><td>CPCB</td><td>28 Lakhs</td><td>2024-2026</td><td>Ongoing</td></tr>
+                    <tr><td>Medical Image Analysis using Deep Learning</td><td>ICMR</td><td>42 Lakhs</td><td>2023-2026</td><td>Ongoing</td></tr>
+                    <tr><td>Structural Health Monitoring System</td><td>SERB</td><td>32 Lakhs</td><td>2024-2027</td><td>Ongoing</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- International Collaborations -->
+    <div class="collaboration-section">
+        <h2>🌍 International Collaborations</h2>
+        <div class="collab-grid">
+            <div class="collab-card"><div class="collab-icon">🇺🇸</div><h3>MIT, USA</h3></div>
+            <div class="collab-card"><div class="collab-icon">🇬🇧</div><h3>Oxford University, UK</h3></div>
+            <div class="collab-card"><div class="collab-icon">🇩🇪</div><h3>TU Munich, Germany</h3></div>
+            <div class="collab-card"><div class="collab-icon">🇸🇬</div><h3>NUS, Singapore</h3></div>
+            <div class="collab-card"><div class="collab-icon">🇦🇺</div><h3>University of Melbourne</h3></div>
+            <div class="collab-card"><div class="collab-icon">🇨🇦</div><h3>University of Toronto</h3></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="quick-links">
+    <div class="links-grid">
+        <a href="#" onclick="alert('Research Publications Database')">📚 Publications</a>
+        <a href="#" onclick="alert('Patent Filing Assistance')">📜 Patent Filing</a>
+        <a href="#" onclick="alert('Research Proposal Guidelines')">📝 Proposal Guidelines</a>
+        <a href="#" onclick="alert('Consultancy Services')">💼 Consultancy</a>
+        <a href="#" onclick="alert('Research Funding Opportunities')">💰 Funding Opportunities</a>
+        <a href="#" onclick="alert('PhD Admissions')">🎓 PhD Admissions</a>
+        <a href="#" onclick="alert('Research Labs Virtual Tour')">🔬 Labs Virtual Tour</a>
+        <a href="#" onclick="alert('Contact Research Office')">📞 Contact Research Office</a>
+    </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="footer-content">
+        <p>© 2025 Trinity Institute of Engineering and Technology | Chennai, Tamil Nadu</p>
+        <p style="margin: 0.5rem 0; font-size: 0.85rem;">📍 Anna Nagar West Extension, Chennai - 600040 | 📞 +91 98765 43210 | ✉️ research@prince.edu</p>
+        <div class="social-icons">
+            <span>📘</span>
+            <span>🐦</span>
+            <span>📸</span>
+            <span>💼</span>
+            <span>▶️</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">Counselling Code: 1414 | Admissions Open 2026-27 | NAAC A+ Accredited</p>
+    </div>
+</footer>
+
+<script>
+    // Publication Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const publications = document.querySelectorAll('.publication-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const filter = btn.getAttribute('data-filter');
+            
+            publications.forEach(pub => {
+                if (filter === 'all' || pub.getAttribute('data-type') === filter) {
+                    pub.style.display = 'block';
+                } else {
+                    pub.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Sticky Navigation Enhancement
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+        } else {
+            nav.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+        }
+    });
+
+    // Animation on scroll for stat cards
+    const statCards = document.querySelectorAll('.stat-card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    statCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease';
+        observer.observe(card);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About TRINITY Engineering College | History, Vision, Mission & Accreditation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+        }
+
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: #071091;
+            color: white;
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .accreditations {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .accreditations span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .accreditations span:hover {
+            color: #ff9800;
+        }
+
+        .counselling-code {
+            background: #ff6f00;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* ========== MAIN HEADER ========== */
+        .main-header {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            color: #edcc62;
+            font-size: 2rem;
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+        .logo p {
+            color: #ff6f00;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .admission-badge {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 5px 15px rgba(255,111,0,0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ========== STICKY NAVIGATION ========== */
+        nav {
+            background: #474d02;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links li a:hover {
+            background: #ff6f00;
+        }
+
+        .nav-links li:nth-child(2) a {
+            background: #ff6f00;
+        }
+
+        /* ========== PAGE BANNER ========== */
+        .page-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ========== BREADCRUMB ========== */
+        .breadcrumb {
+            background: #f0f2f5;
+            padding: 0.8rem 5%;
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: #1a237e;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #ff6f00;
+        }
+
+        /* ========== ABOUT CONTENT ========== */
+        .about-content {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* History Section */
+        .history-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            align-items: center;
+        }
+
+        .history-text h2 {
+            color: #1a237e;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .history-text h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #ff6f00;
+            margin-top: 0.5rem;
+        }
+
+        .history-text p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .history-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .history-stat {
+            text-align: center;
+        }
+
+        .history-stat .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6f00;
+        }
+
+        .history-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .history-image img {
+            width: 100%;
+            height: auto;
+            transition: 0.3s;
+        }
+
+        .history-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Vision Mission Section */
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .vision-card, .mission-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .vision-card:hover, .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .vision-card .icon, .mission-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .vision-card h3, .mission-card h3 {
+            color: #1a237e;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .vision-card p, .mission-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Core Values */
+        .core-values {
+            margin-bottom: 4rem;
+        }
+
+        .core-values h2 {
+            text-align: center;
+            color: #1a237e;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 20px;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            color: white;
+        }
+
+        .value-card:hover .value-icon {
+            color: white;
+        }
+
+        .value-card:hover h4 {
+            color: white;
+        }
+
+        .value-card:hover p {
+            color: #ddd;
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: #ff6f00;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h4 {
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Accreditations Section */
+        .accreditations-section {
+            background: linear-gradient(135deg, #f0f2f5, #e8ecf1);
+            padding: 4rem 5%;
+            border-radius: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .accreditations-section h2 {
+            text-align: center;
+            color: #1a237e;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .accred-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .accred-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .accred-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .accred-logo {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .accred-card h4 {
+            color: #1a237e;
+            margin-bottom: 0.3rem;
+        }
+
+        .accred-card p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Leadership Section */
+        .leadership-section {
+            margin-bottom: 4rem;
+        }
+
+        .leadership-section h2 {
+            text-align: center;
+            color: #1a237e;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .leader-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .leader-image {
+            background: linear-gradient(135deg, #1a237e, #0d1b5e);
+            padding: 2rem;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .leader-card h3 {
+            margin: 1rem 0 0.3rem;
+            color: #1a237e;
+        }
+
+        .leader-card .designation {
+            color: #ff6f00;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-card .quote {
+            padding: 0 1rem 1rem;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* Milestones Timeline */
+        .milestones-section {
+            margin-bottom: 4rem;
+        }
+
+        .milestones-section h2 {
+            text-align: center;
+            color: #1a237e;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, #1a237e, #ff6f00);
+        }
+
+        .timeline-item {
+            padding: 1rem;
+            position: relative;
+            width: 50%;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            padding-right: 2rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+            padding-left: 2rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            right: -8px;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: #ff6f00;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #ff6f00;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+            right: auto;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .timeline-year {
+            color: #ff6f00;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* ========== QUICK LINKS ========== */
+        .quick-links {
+            padding: 3rem 5%;
+            background: #1a237e;
+            color: white;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .links-grid a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem;
+            display: block;
+            transition: 0.3s;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .links-grid a:hover {
+            background: #ff6f00;
+            transform: translateX(5px);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0d1b5e;
+            color: #aaa;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-icons {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icons span {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-icons span:hover {
+            color: #ff6f00;
+            transform: translateY(-3px);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .history-section {
+                grid-template-columns: 1fr;
+            }
+            .vision-mission {
+                grid-template-columns: 1fr;
+            }
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 50px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            .timeline-dot {
+                left: 12px !important;
+                right: auto !important;
+            }
+            .history-stats {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="top-bar">
+    <div class="accreditations">
+        <span>🏆 NIRF Ranked</span>
+        <span>⭐ IQAC Certified</span>
+        <span>📊 NAAC A+ Grade</span>
+        <span>🏅 AICTE-CII Award</span>
+    </div>
+    <div class="counselling-code">
+        📞 COUNSELLING CODE - 1414
+    </div>
+</div>
+
+<!-- ========== MAIN HEADER ========== -->
+<div class="main-header">
+    <div class="logo">
+        <h1>TRINITY</h1>
+        <p>Institute of Engineering and Technology</p>
+    </div>
+    <div class="admission-badge">
+        🎓 ADMISSIONS OPEN 2026-27
+    </div>
+</div>
+
+<!-- ========== STICKY NAVIGATION ========== -->
+<nav>
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">📖 About</a></li>
+            <li><a href="academics.html">📚 Academics</a></li>
+            <li><a href="campus.html">🏫 Campus Life</a></li>
+            <li><a href="coe.html">📝 COE</a></li>
+            <li><a href="research.html">🔬 Research</a></li>
+            <li><a href="placements.html">💼 Placements</a></li>
+            <li><a href="admissions.html">🎯 Admissions</a></li>
+            <li><a href="alumni.html">👥 Alumni</a></li>
+            <li><a href="blog.html">✍️ Blog</a></li>
+            <li><a href="contact.html" class="active">📞 Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========== PAGE BANNER ========== -->
+<section class="page-banner">
+    <h1>About TRINITY</h1>
+    <p>Legacy of Excellence | Shaping Future Leaders Since 1995</p>
+</section>
+
+<!-- ========== BREADCRUMB ========== -->
+<div class="breadcrumb">
+    <a href="#">Home</a> > <span style="color:#ff6f00;">About Us</span>
+</div>
+
+<!-- ========== ABOUT CONTENT ========== -->
+<div class="about-content">
+
+    <!-- History Section -->
+    <div class="history-section">
+        <div class="history-text">
+            <h2>Our Glorious History</h2>
+            <p>Established in <strong>1995</strong>, Trinity - Institute of Engineering and Technology has been a beacon of quality education in Chennai. What started as a modest institution with 3 courses and 200 students has now grown into one of Tamil Nadu's premier engineering colleges.</p>
+            <p>Over the past three decades, we have consistently pushed the boundaries of academic excellence, innovation, and research. Our journey from a local college to a nationally recognized institution reflects our unwavering commitment to student success.</p>
+            <p>Today, we stand proud as an institution that has produced over <strong>15,000+ alumni</strong> working in top companies across the globe, from Google and Microsoft to leading startups and research organizations.</p>
+            <div class="history-stats">
+                <div class="history-stat">
+                    <div class="number">1995</div>
+                    <div>Year Established</div>
+                </div>
+                <div class="history-stat">
+                    <div class="number">15,000+</div>
+                    <div>Alumni Network</div>
+                </div>
+                <div class="history-stat">
+                    <div class="number">30+</div>
+                    <div>Years of Excellence</div>
+                </div>
+            </div>
+        </div>
+        <div class="history-image">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Campus History">
+        </div>
+    </div>
+
+    <!-- Vision & Mission -->
+    <div class="vision-mission">
+        <div class="vision-card">
+            <div class="icon">👁️</div>
+            <h3>Our Vision</h3>
+            <p>To be a globally recognized center of academic excellence, producing technically competent and socially responsible engineers who drive innovation and contribute to nation-building.</p>
+            <p style="margin-top: 1rem;">We envision a future where every TRINITY graduate is a leader, innovator, and changemaker in their chosen field.</p>
+        </div>
+        <div class="mission-card">
+            <div class="icon">🎯</div>
+            <h3>Our Mission</h3>
+            <p>• Provide quality education with state-of-the-art infrastructure<br>
+            • Foster industry-academia collaboration for practical exposure<br>
+            • Encourage research and innovation through dedicated centers<br>
+            • Develop holistic personality with ethical values<br>
+            • Ensure 100% placement assistance and career guidance</p>
+        </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="core-values">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎓</div>
+                <h4>Excellence</h4>
+                <p>Striving for the highest standards in education, research, and student development.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h4>Integrity</h4>
+                <p>Upholding honesty, transparency, and ethical practices in all our endeavors.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">💡</div>
+                <h4>Innovation</h4>
+                <p>Encouraging creative thinking and problem-solving skills among students.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🌍</div>
+                <h4>Inclusivity</h4>
+                <p>Creating a diverse and welcoming environment for all students and staff.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accreditations -->
+    <div class="accreditations-section">
+        <h2>Accreditations & Rankings</h2>
+        <div class="accred-grid">
+            <div class="accred-card">
+                <div class="accred-logo">🏆</div>
+                <h4>NIRF Ranking</h4>
+                <p>Ranked among Top 150 Engineering Colleges in India 2024</p>
+            </div>
+            <div class="accred-card">
+                <div class="accred-logo">⭐</div>
+                <h4>NAAC A+ Grade</h4>
+                <p>Accredited with CGPA of 3.51/4.00</p>
+            </div>
+            <div class="accred-card">
+                <div class="accred-logo">📋</div>
+                <h4>AICTE Approved</h4>
+                <p>All courses approved by AICTE, New Delhi</p>
+            </div>
+            <div class="accred-card">
+                <div class="accred-logo">🏅</div>
+                <h4>NBA Accredited</h4>
+                <p>3 UG programs NBA accredited</p>
+            </div>
+            <div class="accred-card">
+                <div class="accred-logo">🔬</div>
+                <h4>DST Recognition</h4>
+                <p>Recognized by Department of Science & Technology</p>
+            </div>
+            <div class="accred-card">
+                <div class="accred-logo">🌐</div>
+                <h4>ISO Certified</h4>
+                <p>ISO 9001:2015 Certified Institution</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leadership Team -->
+    <div class="leadership-section">
+        <h2>Our Leadership</h2>
+        <div class="leadership-grid">
+            <div class="leader-card">
+                <div class="leader-image">👨‍🎓</div>
+                <h3>Dr. K. S. Ramesh</h3>
+                <div class="designation">Chairman & Founder</div>
+                <div class="quote">"Education is the most powerful weapon to change the world."</div>
+            </div>
+            <div class="leader-card">
+                <div class="leader-image">👩‍🏫</div>
+                <h3>Dr. V. Meenakshi</h3>
+                <div class="designation">Vice-Chancellor</div>
+                <div class="quote">"Excellence is not a skill, it's an attitude we cultivate."</div>
+            </div>
+            <div class="leader-card">
+                <div class="leader-image">👨‍💼</div>
+                <h3>Prof. S. Venkatesh</h3>
+                <div class="designation">Director - Academics</div>
+                <div class="quote">"Innovation distinguishes between a leader and a follower."</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Milestones Timeline -->
+    <div class="milestones-section">
+        <h2>Our Journey Milestones</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">1995</div>
+                    <h4>Foundation Year</h4>
+                    <p>College established with 3 engineering programs</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2005</div>
+                    <h4>First NAAC Accreditation</h4>
+                    <p>Received B++ grade from NAAC</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2015</div>
+                    <h4>NBA Accreditation</h4>
+                    <p>3 programs received NBA accreditation</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2020</div>
+                    <h4>NAAC A+ Grade</h4>
+                    <p>Achieved NAAC A+ with 3.51 CGPA</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2024</div>
+                    <h4>NIRF Ranking</h4>
+                    <p>Ranked among Top 150 Engineering Colleges</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="quick-links">
+    <div class="links-grid">
+        <a href="#" onclick="alert('Apply Online Form will open soon')">📄 Apply Online</a>
+        <a href="#" onclick="alert('Brochure Download Started')">📋 Download Brochure 2026</a>
+        <a href="#" onclick="alert('Fee Structure Details')">💰 Fee Structure</a>
+        <a href="#" onclick="alert('Academic Calendar')">📅 Academic Calendar</a>
+        <a href="#" onclick="alert('Achievements')">🏆 Student Achievements</a>
+        <a href="#" onclick="alert('Notifications')">📢 Latest Notifications</a>
+        <a href="#" onclick="alert('Campus Virtual Tour')">🎥 Virtual Campus Tour</a>
+        <a href="#" onclick="alert('Scholarship Details')">🎓 Scholarships</a>
+    </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="footer-content">
+        <p>© 2025 Trinity Institute of Engineering and Technology | Chennai, Tamil Nadu</p>
+        <p style="margin: 0.5rem 0; font-size: 0.85rem;">📍 Anna Nagar West Extension, Chennai - 600040 | 📞 +91 98765 43210 | ✉️ admissions@prince.edu</p>
+        <div class="social-icons">
+            <span>📘</span>
+            <span>🐦</span>
+            <span>📸</span>
+            <span>💼</span>
+            <span>▶️</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">Counselling Code: 1414 | Admissions Open 2026-27 | NAAC A+ Accredited</p>
+    </div>
+</footer>
+
+<script>
+    // Smooth Scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Sticky Navigation Enhancement
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+        } else {
+            nav.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+        }
+    });
+
+    // Animate numbers on scroll
+    const historyStats = document.querySelectorAll('.history-stat .number');
+    let animated = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !animated) {
+            animated = true;
+            const finalValues = ['1995', '15000+', '30+'];
+            historyStats.forEach((stat, index) => {
+                let current = 0;
+                let target = finalValues[index];
+                if (index === 0) target = 1995;
+                else if (index === 1) target = 15000;
+                else target = 30;
+                
+                const increment = target / 50;
+                const interval = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        stat.innerText = finalValues[index];
+                        clearInterval(interval);
+                    } else {
+                        if (index === 1) stat.innerText = Math.floor(current) + '+';
+                        else stat.innerText = Math.floor(current);
+                    }
+                }, 30);
+            });
+        }
+    }, { threshold: 0.5 });
+
+    if (historyStats.length) {
+        observer.observe(document.querySelector('.history-section'));
+    }
+</script>
+</body>
+</html>
